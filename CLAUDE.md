@@ -83,7 +83,7 @@ Raw cards in `archive/` do **not** get frontmatter — they mirror what the owne
 ### 3b. Body (human-readable — mirrors the owner's template)
 
 ```markdown
-## {Name}
+# {Name}
 
 **Background:** {2–4 sentences of history/origin. If completed from the web, end with a
 source link: (source: https://…). Never invent history.}
@@ -182,8 +182,10 @@ Trigger: files present in `raw/inbox/`, or the owner says "ingest".
       multi-cocktail file, move the whole file once after all its cards are processed.
 3. **Register new tags (if any):** if you introduced a brand-new tag, add it to the
    `VOCABULARY` in `scripts/wiki.py` under the correct dimension.
-4. **Compile:** run `python scripts/wiki.py compile` to regenerate `index.md` and `tags.md`
-   from the cards (deterministic — never hand-edit those two files).
+4. **Compile:** run `python scripts/wiki.py compile` to regenerate `index.md`, `tags.md`, and
+   `.vitepress/sidebar.generated.json` from the cards (deterministic — never hand-edit these
+   generated files). The sidebar JSON is the committed nav artifact the VitePress site imports;
+   it must be recompiled whenever cards are added/renamed so the published site stays in sync.
 5. **Append to `log.md`** — `## YYYY-MM-DD — Ingest` with the cocktails added and which
    fields you completed from the web.
 6. **Lint & report:** run `python scripts/wiki.py lint`; then tell the owner what you added,
@@ -277,9 +279,11 @@ End a lint with a short report + the `log.md` entry `## YYYY-MM-DD — Lint`.
 - **Tags in cards:** `#PascalCase` hashtags, kept identical to `tags.md`.
 - **Measurements:** keep the owner's units (oz / dashes / count). Don't silently convert.
 - **Tone:** the body is for a human reader; keep it clean and faithful to the template.
-- **Generated files:** `index.md` and `tags.md` are produced by `python scripts/wiki.py
-  compile` from the `wiki/` cards — never hand-edit them; edit the cards (and `VOCABULARY`
-  in `scripts/wiki.py` for new canonical tags), then recompile.
+- **Generated files:** `index.md`, `tags.md`, and `.vitepress/sidebar.generated.json` are
+  produced by `python scripts/wiki.py compile` from the `wiki/` cards — never hand-edit them;
+  edit the cards (and `VOCABULARY` in `scripts/wiki.py` for new canonical tags), then recompile.
+  The `.vitepress/sidebar.generated.json` artifact is committed and imported by the VitePress
+  site config so navigation stays deterministic; CI builds consume it without running Python.
 
 ---
 

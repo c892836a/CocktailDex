@@ -1,0 +1,14 @@
+# Node / Yarn
+node_modules/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+yarn-error.log
+
+# VitePress build output & cache
+.vitepress/dist/
+.vitepress/cache/

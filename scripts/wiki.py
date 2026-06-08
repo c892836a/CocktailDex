@@ -9,7 +9,7 @@ contents. The controlled tag vocabulary lives in VOCABULARY below — add a tag 
 recompile. compile NEVER edits cards; it only rebuilds the two derived navigation files.
 """
 from __future__ import annotations
-import re, sys, datetime
+import re, sys, json, datetime
 from pathlib import Path
 
 ROOT        = Path(__file__).resolve().parent.parent
@@ -17,6 +17,7 @@ WIKI        = ROOT / "wiki"
 RAW_INBOX   = ROOT / "raw" / "inbox"
 RAW_ARCHIVE = ROOT / "raw" / "archive"
 PHOTOS      = ROOT / "photos"
+VITEPRESS   = ROOT / ".vitepress"
 
 # --- Controlled vocabulary: dimension -> {blurb, ordered canonical tags} -----
 VOCABULARY = {
@@ -241,11 +242,29 @@ index**: under each tag, every cocktail that carries it.
     return header + "\n\n---\n\n".join(sections) + warn + footer
 
 
+def build_sidebar(cards):
+    """VitePress sidebar config, derived from the cards (committed artifact, consumed by
+    .vitepress/config.mjs). Links are root-relative, extensionless, NO `base` prefix —
+    VitePress prepends `base` itself. One 'Cocktails' group listing every card A→Z."""
+    return [
+        {
+            "text": f"Cocktails ({len(cards)})",
+            "collapsed": False,
+            "items": [
+                {"text": c["name"], "link": f"/wiki/{c['slug']}"} for c in cards
+            ],
+        }
+    ]
+
+
 def do_compile():
     cards = load_cards()
     (ROOT / "index.md").write_text(build_index(cards), encoding="utf-8")
     (ROOT / "tags.md").write_text(build_tags(cards), encoding="utf-8")
-    print(f"compiled {len(cards)} cards -> index.md, tags.md")
+    VITEPRESS.mkdir(exist_ok=True)
+    (VITEPRESS / "sidebar.generated.json").write_text(
+        json.dumps(build_sidebar(cards), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    print(f"compiled {len(cards)} cards -> index.md, tags.md, .vitepress/sidebar.generated.json")
     return 0
 
 

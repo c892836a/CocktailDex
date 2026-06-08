@@ -1,0 +1,64 @@
+name: Deploy VitePress site to GitHub Pages
+
+on:
+  # Deploy on every push to the default branch...
+  push:
+    branches: [main]
+  # ...and allow manual runs from the Actions tab.
+  workflow_dispatch:
+
+# Least-privilege token scoped for Pages deployment via OIDC.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Single in-flight deployment; never cancel an in-progress production deploy.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      # Pin Yarn to the version in package.json's `packageManager` field.
+      - name: Enable Corepack
+        run: corepack enable
+
+      # --immutable fails if yarn.lock would change (the Yarn-modern equivalent of `npm ci`).
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      # Consumes the COMMITTED generated artifacts (index.md, tags.md,
+      # .vitepress/sidebar.generated.json) — no Python / wiki.py in CI.
+      - name: Build site
+        run: yarn docs:build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .vitepress/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

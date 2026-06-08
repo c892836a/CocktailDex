@@ -5,6 +5,33 @@ gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppabl
 
 ---
 
+## 2026-06-08 — VitePress site
+
+Added a static **VitePress** site over the existing wiki markdown, published to GitHub Pages,
+plus an `llms.txt` export so any external LLM can query the collection over HTTP.
+
+- **Site (view, not a fork):** reads content in-place from the repo root (`srcDir: '.'`),
+  `base: '/CocktailDex/'`, with `srcExclude` hiding operational files (`raw/`, `scripts/`,
+  `openspec/`, `.claude/`, `node_modules/`, `CLAUDE.md`, `GEMINI.md`, `README.md`, `log.md`).
+  Built-in local search; photos and card↔card links resolve in the build.
+- **Deterministic nav:** `scripts/wiki.py compile` now also emits the committed
+  `.vitepress/sidebar.generated.json` (alongside `index.md` / `tags.md`); the VitePress config
+  imports it, so the sidebar stays in lockstep with the cards. CLAUDE.md §5/§10 updated.
+- **llms.txt:** `vitepress-plugin-llms` emits `llms.txt` (index map) + `llms-full.txt` (full
+  text) at the site root with absolute `https://c892836a.github.io/CocktailDex/` URLs. Note:
+  the plugin's `domain` is set to the **origin only** (`https://c892836a.github.io`) because it
+  appends the already-base-prefixed page paths — using `.../CocktailDex` would double the base.
+- **Deploy:** `.github/workflows/deploy.yml` builds (Node-only, Yarn via Corepack) and deploys
+  to Pages on push to `main` + manual dispatch. Build consumes the committed artifacts — no
+  Python in CI.
+- **Card heading → H1:** changed each card's title heading from `## {Name}` to `# {Name}`
+  (and CLAUDE.md §3b template) so VitePress and `llms.txt` pick up the cocktail name as the
+  page title — previously they showed "Untitled". This is a presentation tweak only; the card
+  **schema** (frontmatter fields, ingest/lint/query, human-only ratings) is unchanged, and
+  `wiki.py` parses the name from frontmatter, so compile/lint are unaffected.
+- **Manual one-time step (pending):** set GitHub repo Settings → Pages → Source = **GitHub
+  Actions** before the first deploy will publish.
+
 ## 2026-06-08 — Rename
 
 Project renamed from "Cocktail LLM Wiki" to **CocktailDex**. Updated titles/headers in

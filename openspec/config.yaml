@@ -1,0 +1,66 @@
+schema: spec-driven
+
+# Project context shown to the AI when creating artifacts.
+context: |
+  ## Project
+  CocktailDex — a persistent, compounding cocktail knowledge base built on Karpathy's
+  "LLM Wiki" pattern (raw sources -> LLM-maintained wiki -> schema doc). The LLM is the
+  maintainer; a human owner curates and directs. CLAUDE.md is the single source of truth
+  for the wiki workflow — read it before any wiki operation.
+
+  ## Tech stack
+  - Content: Markdown cocktail cards in wiki/ (YAML frontmatter + templated body);
+    generated index.md and tags.md at the repo root; images in photos/.
+  - Tooling: Python — scripts/wiki.py provides `compile` (regenerate index.md, tags.md,
+    and the VitePress sidebar artifact) and `lint`; it also holds the canonical tag
+    VOCABULARY. All generation is deterministic.
+  - Web (see change add-vitepress-site): VitePress static site built in-place over the
+    wiki markdown; vitepress-plugin-llms emits llms.txt / llms-full.txt; GitHub Actions
+    deploys to GitHub Pages.
+  - Runtime: Node 22. Package manager: **Yarn** — use `yarn` / `yarn install` / `yarn dlx`
+    and commit yarn.lock. Do NOT use npm or commit package-lock.json.
+
+  ## Deployment
+  - GitHub repo c892836a/CocktailDex; GitHub Pages project site.
+  - VitePress base path: /CocktailDex/. Deployed URL: https://c892836a.github.io/CocktailDex/.
+  - CI is Node-only (no Python at build time): wiki.py outputs (index.md, tags.md, the
+    sidebar JSON) are committed and consumed directly by the build.
+
+  ## Conventions & invariants
+  - scripts/wiki.py compile is the single source of truth. index.md, tags.md, and the
+    generated sidebar are GENERATED — never hand-edit them; edit the cards, then recompile.
+  - The LLM owns judgment (completing fields from the web with cited sources, assigning 3-7
+    tags from the 6-dimension controlled vocabulary, ranking similar cocktails); the script
+    owns the bookkeeping.
+  - HUMAN-ONLY fields — never write, infer, estimate, or alter: Eric Rating, Charlene
+    Rating, Modified Variation. Carry them across raw -> wiki verbatim.
+  - No fabricated facts: Background and any historical claim must cite a source URL; if
+    unverifiable, write TBD.
+  - State machine: raw/inbox = pending, raw/archive = frozen originals (immutable). Ingest
+    moves files from inbox to archive after processing.
+  - Filenames: kebab-case slug of the name. Dates: ISO YYYY-MM-DD everywhere.
+  - Domain: a personal cocktail collection; use standard bartending terminology and keep the
+    owner's measures (oz / dashes / count) — never silently convert units.
+
+# Per-artifact rules applied when creating each artifact.
+rules:
+  proposal:
+    - Keep it to 1-2 pages; focus on why and what, not how.
+    - Always include an explicit Non-goals section.
+    - List affected capabilities; reuse existing spec names from openspec/specs/ when modifying.
+  design:
+    - Create only when the change is cross-cutting or adds dependencies/architecture.
+    - For each decision, record the alternative(s) considered and why they were rejected.
+    - Format risks as [Risk] -> Mitigation; include a rollback/migration note for anything
+      that deploys or publishes.
+  specs:
+    - Use SHALL/MUST (never should/may); every requirement has at least one scenario.
+    - Scenarios use exactly four hashtags (#### Scenario) with WHEN/THEN bullets.
+    - Never specify behavior that writes the human-only fields, and preserve wiki.py as the
+      single source of truth for generated files.
+  tasks:
+    - Group under numbered ## headings; every task is a `- [ ]` checkbox, ordered by dependency.
+    - Node commands use yarn (yarn install / yarn build / yarn dlx) — never npm.
+    - Verify locally (yarn docs:build then docs:preview) before any push or deploy task.
+    - Keep generation deterministic — regenerate via wiki.py compile rather than hand-editing
+      generated files.
