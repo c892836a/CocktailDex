@@ -1,8 +1,11 @@
 # 🍸 CocktailDex — Index
 
-**This is the entry point.** An LLM answering any question about this collection should
-read this page first, then narrow with [tags.md](./tags.md) and `grep`, and only open the
-individual [wiki/](./wiki/) cards it needs. Workflow & rules live in [CLAUDE.md](./CLAUDE.md).
+The at-a-glance index of the whole collection. **To find a drink:** use the search box (top
+of the page), browse by [Tags](./tags) (spirit · flavour · technique · glass), or scan the
+reference table below and click a name for the full card.
+
+> **For LLMs:** the entire collection is available as a single machine-readable dump at
+> [`llms-full.txt`](./llms-full.txt) — fetch that instead of crawling pages.
 
 **Collection:** 4 cocktails · bases: Rum · last updated 2026-06-08
 
@@ -23,22 +26,6 @@ only). Click a name for the full card.
 | [Daiquiri](./wiki/daiquiri.md) | Rum | Coupe | White rum, Fresh lime juice, Simple syrup | Shaken | Refreshing, Tart, Balanced | — | — |
 | [Mojito](./wiki/mojito.md) | Rum | Highball (Collins) glass | White rum, Lime juice, Sugar (or 0.75 oz simple syrup), Mint leaves, Soda water, to top | Muddled | Refreshing, Citrusy, Light | — | — |
 | [Queen's Park Swizzle](./wiki/queens-park-swizzle.md) | Rum | Collins glass | Aged rum (Demerara), Lime juice, Demerara rich syrup, Mint leaves, Angostura bitters | Swizzle | Spiced, Citrusy, Complex | — | — |
-
----
-
-## Browse by
-
-- **Tag / spirit / flavour / technique / glass →** [tags.md](./tags.md)
-- **Pending to ingest →** anything in [`raw/inbox/`](./raw/inbox/)
-- **Activity history →** [log.md](./log.md)
-
-## Quick greps
-
-```bash
-grep -ril "#Tiki"        wiki/    # Tiki-style drinks
-grep -ri  "Eric.*5 / 5"  wiki/    # Eric's 5/5 picks
-grep -ri  "Falernum"     wiki/    # anything with Falernum
-```
 
 ---
 

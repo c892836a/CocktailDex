@@ -153,9 +153,12 @@ def build_index(cards):
     ) or "| _(no cocktails yet — drop files in raw/inbox/ and ingest)_ ||||||||"
     return f"""# 🍸 CocktailDex — Index
 
-**This is the entry point.** An LLM answering any question about this collection should
-read this page first, then narrow with [tags.md](./tags.md) and `grep`, and only open the
-individual [wiki/](./wiki/) cards it needs. Workflow & rules live in [CLAUDE.md](./CLAUDE.md).
+The at-a-glance index of the whole collection. **To find a drink:** use the search box (top
+of the page), browse by [Tags](./tags) (spirit · flavour · technique · glass), or scan the
+reference table below and click a name for the full card.
+
+> **For LLMs:** the entire collection is available as a single machine-readable dump at
+> [`llms-full.txt`](./llms-full.txt) — fetch that instead of crawling pages.
 
 **Collection:** {len(cards)} cocktails · bases: {bases} · last updated {today}
 
@@ -173,22 +176,6 @@ only). Click a name for the full card.
 | Cocktail | Base | Glassware | Ingredients | Instruction | Profile | Eric | Charlene |
 |----------|------|-----------|-------------|-------------|---------|:----:|:--------:|
 {rows}
-
----
-
-## Browse by
-
-- **Tag / spirit / flavour / technique / glass →** [tags.md](./tags.md)
-- **Pending to ingest →** anything in [`raw/inbox/`](./raw/inbox/)
-- **Activity history →** [log.md](./log.md)
-
-## Quick greps
-
-```bash
-grep -ril "#Tiki"        wiki/    # Tiki-style drinks
-grep -ri  "Eric.*5 / 5"  wiki/    # Eric's 5/5 picks
-grep -ri  "Falernum"     wiki/    # anything with Falernum
-```
 
 ---
 
