@@ -1,0 +1,253 @@
+/* CocktailDex — speakeasy / aged-spirit visual identity.
+ * Presentation-only layer (D2/D6). All colour is expressed by overriding VitePress CSS
+ * variables so the dark-mode toggle keeps working. Light and dark share ONE brand hue
+ * (amber/copper); only lightness/chroma differ. Contrast verified for WCAG AA (see §2.3).
+ */
+
+/* ===================================================================== *
+ * 2.1 / 2.2  PALETTE — light (warm paper + deep copper)                 *
+ * ===================================================================== */
+:root {
+  /* Brand — deep copper. brand-1 is the link/accent colour (AA on paper). */
+  --vp-c-brand-1: #a8511c; /* on #fbf7f0 → ~5.3:1 (AA) */
+  --vp-c-brand-2: #bc6326;
+  --vp-c-brand-3: #c9722f; /* solid button bg */
+  --vp-c-brand-soft: rgba(168, 81, 28, 0.14);
+
+  /* Backgrounds — warm paper. */
+  --vp-c-bg: #fbf7f0;
+  --vp-c-bg-alt: #f1e8da;
+  --vp-c-bg-soft: #f5eee1;
+  --vp-c-bg-elv: #fffdf8;
+
+  /* Text — warm espresso ink. */
+  --vp-c-text-1: #2a211a; /* on paper → ~13:1 */
+  --vp-c-text-2: #5c5048;
+  --vp-c-text-3: #8a7d72;
+
+  /* Tie the default-theme button/divider tints to the warm scheme. */
+  --vp-c-default-soft: rgba(120, 100, 84, 0.12);
+}
+
+/* ===================================================================== *
+ * PALETTE — dark (warm espresso-black + bright gold-amber, same hue)    *
+ * ===================================================================== */
+.dark {
+  --vp-c-brand-1: #e3a45c; /* on #1a1410 → ~6.8:1 (AA) */
+  --vp-c-brand-2: #ebb270;
+  --vp-c-brand-3: #c9843f;
+  --vp-c-brand-soft: rgba(227, 164, 92, 0.16);
+
+  --vp-c-bg: #1a1410;
+  --vp-c-bg-alt: #221a14;
+  --vp-c-bg-soft: #2a201a;
+  --vp-c-bg-elv: #271e18;
+
+  --vp-c-text-1: #f2e9dd; /* on espresso → ~14:1 */
+  --vp-c-text-2: #c2b4a4;
+  --vp-c-text-3: #8f8175;
+
+  --vp-c-default-soft: rgba(220, 200, 180, 0.10);
+}
+
+/* ===================================================================== *
+ * 3.2  TYPOGRAPHY — serif display headings, sans body                   *
+ * Playfair Display loaded via config.mjs head (font-display: swap).     *
+ * 3.3  System-serif fallback keeps headings readable if the font is     *
+ *      blocked; body keeps the VitePress Inter base.                    *
+ * ===================================================================== */
+:root {
+  --cdx-font-display: 'Playfair Display', 'Iowan Old Style', 'Palatino Linotype',
+    'Book Antiqua', Palatino, Georgia, 'Times New Roman', serif;
+}
+
+.vp-doc h1,
+.vp-doc h2 {
+  font-family: var(--cdx-font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.vp-doc h1 {
+  font-size: 2.4rem;
+  line-height: 1.15;
+}
+
+/* A hairline copper rule under each major section heading. */
+.vp-doc h2 {
+  border-bottom: 1px solid var(--vp-c-divider);
+  padding-bottom: 0.3em;
+}
+
+/* ===================================================================== *
+ * 4.3  TAG CHIPS — one colour family per dimension (light + dark)       *
+ * Markup is injected client-side by enhance.js as:                      *
+ *   <span class="cdx-tags"><span class="cdx-tag" data-dimension="…">…   *
+ * ===================================================================== */
+.cdx-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  vertical-align: middle;
+}
+
+.cdx-tag {
+  display: inline-block;
+  padding: 0.12em 0.66em;
+  border-radius: 999px;
+  font-size: 0.82em;
+  font-weight: 600;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.cdx-tag::before {
+  content: '#';
+  opacity: 0.55;
+  margin-right: 0.04em;
+}
+
+/* Light-mode chip families: soft tinted bg + saturated ink + matching border. */
+.cdx-tag[data-dimension='base'] {
+  background: #f4e2d3; color: #8a4214; border-color: #e2c3a6;
+}
+.cdx-tag[data-dimension='ingredient'] {
+  background: #dfeede; color: #2f6b34; border-color: #b9d8b8;
+}
+.cdx-tag[data-dimension='flavor'] {
+  background: #f3dbdd; color: #8e2f3c; border-color: #e2b6bb;
+}
+.cdx-tag[data-dimension='technique'] {
+  background: #d9e6f2; color: #2b557f; border-color: #b2cae0;
+}
+.cdx-tag[data-dimension='family'] {
+  background: #e7dcef; color: #6a3d86; border-color: #cdb8db;
+}
+.cdx-tag[data-dimension='glassware'] {
+  background: #e2e0dd; color: #4c4843; border-color: #c8c4be;
+}
+.cdx-tag[data-dimension='unknown'] {
+  background: var(--vp-c-default-soft); color: var(--vp-c-text-2);
+  border-color: var(--vp-c-divider);
+}
+
+/* Dark-mode chip families: deep translucent bg + bright same-hue ink. */
+.dark .cdx-tag[data-dimension='base'] {
+  background: rgba(201, 116, 47, 0.18); color: #e7ad72; border-color: rgba(201, 116, 47, 0.4);
+}
+.dark .cdx-tag[data-dimension='ingredient'] {
+  background: rgba(90, 170, 96, 0.16); color: #93cf97; border-color: rgba(90, 170, 96, 0.38);
+}
+.dark .cdx-tag[data-dimension='flavor'] {
+  background: rgba(196, 78, 96, 0.18); color: #e69aa6; border-color: rgba(196, 78, 96, 0.4);
+}
+.dark .cdx-tag[data-dimension='technique'] {
+  background: rgba(74, 134, 196, 0.18); color: #8fb6e0; border-color: rgba(74, 134, 196, 0.4);
+}
+.dark .cdx-tag[data-dimension='family'] {
+  background: rgba(150, 102, 188, 0.18); color: #c2a3df; border-color: rgba(150, 102, 188, 0.4);
+}
+.dark .cdx-tag[data-dimension='glassware'] {
+  background: rgba(160, 152, 142, 0.18); color: #c7bdb1; border-color: rgba(160, 152, 142, 0.38);
+}
+.dark .cdx-tag[data-dimension='unknown'] {
+  background: var(--vp-c-default-soft); color: var(--vp-c-text-2);
+  border-color: var(--vp-c-divider);
+}
+
+/* ===================================================================== *
+ * 5.x  READ-ONLY STAR RATINGS                                           *
+ * enhance.js injects <span class="cdx-rating"> … <span class="cdx-star" *
+ * Stars reflect ONLY the number already in the markup. Never authored.  *
+ * ===================================================================== */
+.cdx-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.08em;
+  vertical-align: middle;
+}
+
+.cdx-star {
+  color: var(--vp-c-text-3);
+  font-size: 1.05em;
+  line-height: 1;
+}
+
+.cdx-star--on {
+  color: var(--vp-c-brand-1);
+}
+
+.cdx-rating-note {
+  margin-left: 0.55em;
+  font-size: 0.82em;
+  color: var(--vp-c-text-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.cdx-rating--empty .cdx-rating-note {
+  font-style: italic;
+}
+
+/* ===================================================================== *
+ * 6.1  PHOTOS — rounded, soft shadow, constrained, centred              *
+ * ===================================================================== */
+.vp-doc img {
+  display: block;
+  margin: 1.4rem auto;
+  max-width: min(460px, 100%);
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 22px rgba(60, 38, 18, 0.18);
+}
+
+.dark .vp-doc img {
+  filter: brightness(0.88);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================================================== *
+ * 6.2  INDEX REFERENCE TABLE — zebra stripes, header bg, row hover      *
+ * ===================================================================== */
+.vp-doc table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.vp-doc tr {
+  background: transparent;
+  transition: background-color 0.15s ease;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-alt);
+  font-family: var(--cdx-font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.vp-doc tbody tr:nth-child(2n) {
+  background: var(--vp-c-bg-soft);
+}
+
+.vp-doc tbody tr:hover {
+  background: var(--vp-c-brand-soft);
+}
+
+/* ===================================================================== *
+ * 6.3  NAV — 🍸 brand mark before the site title                        *
+ * ===================================================================== */
+.VPNavBarTitle .title::before {
+  content: '🍸';
+  margin-right: 0.4em;
+  font-size: 1.1em;
+}
+
+.VPNavBarTitle .title {
+  font-family: var(--cdx-font-display);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}

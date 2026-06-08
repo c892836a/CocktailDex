@@ -24,6 +24,19 @@ export default defineConfig({
   description: 'A persistent, compounding cocktail knowledge base.',
   lang: 'en-US',
 
+  // Typography (theme D5): serif display font for headings. Loaded non-blocking via
+  // preconnect + `display=swap` so the build/first paint never waits on it; if the font
+  // fails to fetch, custom.css falls back to a system serif stack. CDN-hosted — no binary
+  // assets in-repo and CI stays Node-only. Body keeps the VitePress Inter base.
+  head: [
+    ['link', { rel: 'preconnect', href: 'https://fonts.googleapis.com' }],
+    ['link', { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' }],
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap',
+    }],
+  ],
+
   // D1 — read content in-place from the repo root; never copy into a docs/ folder.
   srcDir: '.',
   // D4 — project-site base path so assets/links resolve on GitHub Pages.
