@@ -21,9 +21,10 @@ single fetch.
 - **AND** it contains the text content of the wiki cards (e.g. ingredients, instructions, profiles)
 
 ### Requirement: llms.txt links are absolute and fetchable
-Links in the generated `llms.txt` / `llms-full.txt` SHALL use the deployed site origin
-(`https://c892836a.github.io/CocktailDex`) so that an external LLM can fetch the referenced
-pages over HTTP without knowing the host out of band.
+Links in the generated `llms.txt` / `llms-full.txt` SHALL be absolute URLs under the deployed
+site base (`https://c892836a.github.io/CocktailDex/` — i.e. origin `https://c892836a.github.io`
+plus the `/CocktailDex/` base path) so that an external LLM can fetch the referenced pages over
+HTTP without knowing the host out of band.
 
 #### Scenario: Generated links use the deployed origin
 - **WHEN** the llms output is generated for production

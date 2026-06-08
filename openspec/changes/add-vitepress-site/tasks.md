@@ -21,7 +21,8 @@
 ## 4. llms.txt output (D3)
 
 - [x] 4.1 Register `vitepress-plugin-llms` in the Vite `plugins` array in `.vitepress/config.mjs`
-- [x] 4.2 Configure the plugin `domain: 'https://c892836a.github.io/CocktailDex'` so generated links are absolute
+- [x] 4.2 Configure the plugin `domain: 'https://c892836a.github.io'` (**origin only**) so generated links are absolute. The plugin appends each page's already-`base`-prefixed path (`/CocktailDex/…`), so setting `domain` to `…/CocktailDex` would double the base (`…/CocktailDex/CocktailDex/…`); origin + base resolves to the correct `https://c892836a.github.io/CocktailDex/…`
+- [x] 4.3 Normalize each card's title heading `## {Name}` → `# {Name}` (and the CLAUDE.md §3b template) so VitePress and `llms.txt` resolve the cocktail name as the page title instead of "Untitled" — presentation only; the card schema (frontmatter fields), `wiki.py` parsing, and human-only ratings are unchanged
 
 ## 5. Local build & verification (do this BEFORE any push)
 
@@ -38,7 +39,7 @@
 
 ## 7. Deploy & production verification
 
-- [ ] 7.1 Commit all new/changed files (config, package files, workflow, generated sidebar, regenerated index/tags) and push to `main`
+- [x] 7.1 Commit all new/changed files (config, package files, workflow, generated sidebar, regenerated index/tags) and push to `main`
 - [ ] 7.2 In the GitHub repo, set Settings → Pages → Source = **GitHub Actions** (one-time)
 - [ ] 7.3 Confirm the Actions run succeeds and verify `https://c892836a.github.io/CocktailDex/` and `…/llms.txt` are reachable
 

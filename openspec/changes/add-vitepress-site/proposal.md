@@ -28,8 +28,10 @@ markdown as a static VitePress site on GitHub Pages, plus emitting an `llms.txt`
   can be built and verified **locally first**, before any push.
 
 Non-goals: no embedded/interactive chatbot UI (GitHub Pages is static, no backend); no
-changes to the cocktail card schema, the ingest/lint workflow, or the human-only rating
-fields; no content migration into a separate `docs/` folder.
+changes to the cocktail card schema (frontmatter fields), the ingest/lint workflow, or the
+human-only rating fields; no content migration into a separate `docs/` folder. (Card title
+headings were normalized `## {Name}` → `# {Name}` so page titles resolve — a presentation
+tweak that leaves the schema, `wiki.py` parsing, and ratings untouched.)
 
 ## Capabilities
 
@@ -49,13 +51,17 @@ fields; no content migration into a separate `docs/` folder.
 
 ## Impact
 
-- **New files:** `.vitepress/config.{mjs,ts}`, `package.json`, `yarn.lock`,
-  `.github/workflows/deploy.yml`, `.gitignore` (add `node_modules/`, `.vitepress/dist`,
-  `.vitepress/cache`). Possibly a `wiki/index.md` landing/home page.
-- **Modified files:** `scripts/wiki.py` (+ `wikilib.py`) — add sidebar-config emission to
-  `compile`; `index.md` / `tags.md` regenerated.
+- **New files:** `.vitepress/config.mjs`, `.vitepress/sidebar.generated.json` (committed,
+  emitted by `wiki.py compile`), `package.json`, `yarn.lock`, `.yarnrc.yml`
+  (`nodeLinker: node-modules`), `.github/workflows/deploy.yml`, `.gitignore`
+  (`node_modules/`, `.vitepress/dist`, `.vitepress/cache`, Yarn artifacts). The existing root
+  `index.md` serves as the home page — no separate landing page was added.
+- **Modified files:** `scripts/wiki.py` — add sidebar-config emission to `compile`; `index.md`
+  / `tags.md` regenerated; `CLAUDE.md` (§5/§10 note the sidebar artifact; §3b template heading
+  `## → #`); the four `wiki/*.md` card title headings normalized `## → #`.
 - **Dependencies (dev):** `vitepress`, `vitepress-plugin-llms` (Node 22 with Corepack-managed Yarn).
 - **External / manual:** GitHub repo `c892836a/CocktailDex` must have Pages source set to
   **GitHub Actions** (one-time settings step). Site URL: `https://c892836a.github.io/CocktailDex/`.
-- **Unaffected:** card schema (§3), ingest/lint/query workflows, `raw/` state machine, and
-  the three human-only fields (Eric/Charlene ratings, Modified Variation).
+- **Unaffected:** card schema (§3a frontmatter fields), ingest/lint/query workflows, `raw/`
+  state machine, and the three human-only fields (Eric/Charlene ratings, Modified Variation).
+  (Only the §3b body title-heading level changed — `## → #` — not the field set.)
