@@ -26,10 +26,15 @@ jobs:
         uses: actions/checkout@v5
 
       # Install Node 24 first. Corepack (bundled with Node) then targets this Node's bin dir.
+      # package-manager-cache: false — setup-node@v5 auto-enables Yarn caching when it sees the
+      # `packageManager: yarn@4.x` field, but here Corepack hasn't run yet so `yarn` is still the
+      # runner's global 1.x, which fails against a Berry project. Caching happens in the second
+      # setup-node step below (after Corepack), so suppress the auto-cache attempt here.
       - name: Setup Node
         uses: actions/setup-node@v5
         with:
           node-version: 24
+          package-manager-cache: false
 
       # Activate the Yarn version pinned in package.json's `packageManager` field (4.12.0).
       # MUST run BEFORE any `cache: yarn` step: the runner's pre-installed global Yarn is 1.x,
