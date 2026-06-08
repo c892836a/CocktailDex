@@ -25,15 +25,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Install Node 20 first. Corepack (bundled with Node) then targets this Node's bin dir.
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: yarn
 
-      # Pin Yarn to the version in package.json's `packageManager` field.
+      # Activate the Yarn version pinned in package.json's `packageManager` field (4.12.0).
+      # MUST run BEFORE any `cache: yarn` step: the runner's pre-installed global Yarn is 1.x,
+      # which refuses to run against a `packageManager: yarn@4.x` project.
       - name: Enable Corepack
         run: corepack enable
+
+      # Re-run setup-node now that `yarn` resolves to 4.12.0, so `cache: yarn` reads the
+      # Yarn-Berry cache folder and keys the cache on yarn.lock.
+      - name: Configure Yarn cache
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
 
       # --immutable fails if yarn.lock would change (the Yarn-modern equivalent of `npm ci`).
       - name: Install dependencies

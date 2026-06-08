@@ -34,13 +34,13 @@
 ## 6. GitHub Actions deployment (Node-only)
 
 - [x] 6.1 Add `.github/workflows/deploy.yml`: trigger on push to `main` + `workflow_dispatch`; `permissions` for Pages (`pages: write`, `id-token: write`); single-run `concurrency`
-- [x] 6.2 Workflow steps: checkout → setup-node (v20+, `cache: yarn`) → `corepack enable` → `yarn install --immutable` → `yarn docs:build` → `actions/configure-pages` → `actions/upload-pages-artifact` (path `.vitepress/dist`) → `actions/deploy-pages`
+- [x] 6.2 Workflow steps: checkout → setup-node (v20+) → `corepack enable` → setup-node (`cache: yarn`) → `yarn install --immutable` → `yarn docs:build` → `actions/configure-pages` → `actions/upload-pages-artifact` (path `.vitepress/dist`) → `actions/deploy-pages`. **Note:** `corepack enable` must precede any `cache: yarn` step — the runner's global Yarn 1.x errors out on a `packageManager: yarn@4.x` project, so caching is wired via a second `setup-node` after Corepack is active
 - [x] 6.3 Confirm the workflow contains NO Python/`pip`/`wiki.py` step (build consumes committed artifacts)
 
 ## 7. Deploy & production verification
 
 - [x] 7.1 Commit all new/changed files (config, package files, workflow, generated sidebar, regenerated index/tags) and push to `main`
-- [ ] 7.2 In the GitHub repo, set Settings → Pages → Source = **GitHub Actions** (one-time)
+- [x] 7.2 In the GitHub repo, set Settings → Pages → Source = **GitHub Actions** (one-time)
 - [ ] 7.3 Confirm the Actions run succeeds and verify `https://c892836a.github.io/CocktailDex/` and `…/llms.txt` are reachable
 
 ## 8. Wrap-up
