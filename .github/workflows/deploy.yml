@@ -21,6 +21,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # The Node/Yarn toolchain lives in site/ (package.json, yarn.lock, .yarnrc.yml, .yarn/).
+    # Run every `run:` step (Corepack, yarn install, yarn docs:build) from there so Corepack
+    # reads site/package.json's pinned Yarn version and Yarn resolves the relocated lockfile.
+    # NOTE: this default applies ONLY to `run:` steps — `uses:` action steps (setup-node,
+    # upload-pages-artifact) still operate from the workspace root.
+    defaults:
+      run:
+        working-directory: site
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -43,29 +51,43 @@ jobs:
         run: corepack enable
 
       # Re-run setup-node now that `yarn` resolves to 4.12.0, so `cache: yarn` reads the
-      # Yarn-Berry cache folder and keys the cache on yarn.lock.
+      # Yarn-Berry cache folder and keys the cache on yarn.lock. The lockfile now lives in
+      # site/, so point cache-dependency-path at it (setup-node action steps run from the
+      # workspace root and would otherwise look for ./yarn.lock).
       - name: Configure Yarn cache
         uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: yarn
+          cache-dependency-path: site/yarn.lock
 
       # --immutable fails if yarn.lock would change (the Yarn-modern equivalent of `npm ci`).
       - name: Install dependencies
         run: yarn install --immutable
 
+      # The VitePress root is site/, but the content lives at the repo root (srcDir: '..').
+      # The root content modules import `vue`/`vitepress`, resolved by walking up from the
+      # repo root — which has no node_modules. Symlink it to site/node_modules so resolution
+      # succeeds. Run from the workspace root (the job default working-directory is site/).
+      - name: Link node_modules at repo root
+        working-directory: ${{ github.workspace }}
+        run: ln -s site/node_modules node_modules
+
       # Consumes the COMMITTED generated artifacts (index.md, tags.md,
-      # .vitepress/sidebar.generated.json) — no Python / wiki.py in CI.
+      # site/.vitepress/sidebar.generated.json) — no Python / wiki.py in CI.
       - name: Build site
         run: yarn docs:build
 
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
+      # The VitePress root is site/, so the build output lands at site/.vitepress/dist.
+      # This action runs from the workspace root (the working-directory default applies only
+      # to `run:` steps), so the path is workspace-relative.
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          path: .vitepress/dist
+          path: site/.vitepress/dist
 
   deploy:
     needs: build

@@ -1,14 +1,14 @@
 # Node / Yarn
 node_modules/
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
+site/.yarn/*
+!site/.yarn/patches
+!site/.yarn/plugins
+!site/.yarn/releases
+!site/.yarn/sdks
+!site/.yarn/versions
 .pnp.*
 yarn-error.log
 
-# VitePress build output & cache
-.vitepress/dist/
-.vitepress/cache/
+# VitePress build output & cache (the .vitepress root lives under site/)
+site/.vitepress/dist/
+site/.vitepress/cache/

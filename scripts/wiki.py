@@ -17,7 +17,7 @@ WIKI        = ROOT / "wiki"
 RAW_INBOX   = ROOT / "raw" / "inbox"
 RAW_ARCHIVE = ROOT / "raw" / "archive"
 PHOTOS      = ROOT / "photos"
-VITEPRESS   = ROOT / ".vitepress"
+VITEPRESS   = ROOT / "site" / ".vitepress"
 
 # --- Controlled vocabulary: dimension -> {blurb, ordered canonical tags} -----
 VOCABULARY = {
@@ -251,7 +251,7 @@ def do_compile():
     VITEPRESS.mkdir(exist_ok=True)
     (VITEPRESS / "sidebar.generated.json").write_text(
         json.dumps(build_sidebar(cards), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"compiled {len(cards)} cards -> index.md, tags.md, .vitepress/sidebar.generated.json")
+    print(f"compiled {len(cards)} cards -> index.md, tags.md, site/.vitepress/sidebar.generated.json")
     return 0
 
 

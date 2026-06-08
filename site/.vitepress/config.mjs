@@ -38,12 +38,17 @@ export default defineConfig({
   ],
 
   // D1 — read content in-place from the repo root; never copy into a docs/ folder.
-  srcDir: '.',
+  // The VitePress root is site/ (where this .vitepress lives); content stays one level up at
+  // the repo root, so srcDir points at the parent. The toolchain (this .vitepress, package
+  // manifests, node_modules) lives in site/, which keeps the config's `vitepress` import
+  // resolvable from node_modules co-located here.
+  srcDir: '..',
   // D4 — project-site base path so assets/links resolve on GitHub Pages.
   base: '/CocktailDex/',
 
   // D1 — hide operational (non-content) files from the site.
   srcExclude: [
+    'site/**', // relocated toolchain dir (this .vitepress + node_modules) — never content
     'raw/**',
     'scripts/**',
     'openspec/**',

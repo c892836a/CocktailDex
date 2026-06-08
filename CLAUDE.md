@@ -48,8 +48,18 @@ CocktailDex/
 │   ├── inbox/           ← DROP ZONE. New cocktail docs land here = "pending / not yet processed"
 │   └── archive/         ← FROZEN originals, moved here after ingest = "done". NEVER edit these.
 ├── wiki/                ← enriched, living cocktail cards (one per cocktail). You maintain these.
-└── photos/             ← images referenced by cards as ../photos/<slug>.jpg
+├── photos/             ← images referenced by cards as ../photos/<slug>.jpg
+└── site/                ← VitePress + Node/Yarn toolchain (NOT content). Build runs from here.
+    ├── package.json     ← Yarn project (vitepress deps + docs:build/dev/preview scripts).
+    ├── yarn.lock  .yarnrc.yml  .yarn/  node_modules/
+    └── .vitepress/      ← VitePress project root: config.mjs (srcDir:'..'), theme/,
+                            sidebar.generated.json (GENERATED), dist/, cache/.
 ```
+
+> **Why `site/`?** VitePress needs its `.vitepress/` config and `node_modules` co-located,
+> but the wiki content stays at the repo root (D1). So the whole toolchain lives in `site/`
+> with `srcDir: '..'` pointing back at the root content; a git-ignored `node_modules` symlink
+> at the repo root lets the root content resolve its imports. Run builds with `cd site && yarn …`.
 
 **The inbox/archive split is the state machine.** You never need a separate "processed"
 list: anything in `raw/inbox/` is pending; anything in `raw/archive/` is done. After you
@@ -183,8 +193,8 @@ Trigger: files present in `raw/inbox/`, or the owner says "ingest".
 3. **Register new tags (if any):** if you introduced a brand-new tag, add it to the
    `VOCABULARY` in `scripts/wiki.py` under the correct dimension.
 4. **Compile:** run `python scripts/wiki.py compile` to regenerate `index.md`, `tags.md`, and
-   `.vitepress/sidebar.generated.json` from the cards (deterministic — never hand-edit these
-   generated files). The sidebar JSON is the committed nav artifact the VitePress site imports;
+   `site/.vitepress/sidebar.generated.json` from the cards (deterministic — never hand-edit
+   these generated files). The sidebar JSON is the committed nav artifact the VitePress site imports;
    it must be recompiled whenever cards are added/renamed so the published site stays in sync.
 5. **Append to `log.md`** — `## YYYY-MM-DD — Ingest` with the cocktails added and which
    fields you completed from the web.
@@ -279,11 +289,16 @@ End a lint with a short report + the `log.md` entry `## YYYY-MM-DD — Lint`.
 - **Tags in cards:** `#PascalCase` hashtags, kept identical to `tags.md`.
 - **Measurements:** keep the owner's units (oz / dashes / count). Don't silently convert.
 - **Tone:** the body is for a human reader; keep it clean and faithful to the template.
-- **Generated files:** `index.md`, `tags.md`, and `.vitepress/sidebar.generated.json` are
+- **Generated files:** `index.md`, `tags.md`, and `site/.vitepress/sidebar.generated.json` are
   produced by `python scripts/wiki.py compile` from the `wiki/` cards — never hand-edit them;
   edit the cards (and `VOCABULARY` in `scripts/wiki.py` for new canonical tags), then recompile.
-  The `.vitepress/sidebar.generated.json` artifact is committed and imported by the VitePress
+  The `site/.vitepress/sidebar.generated.json` artifact is committed and imported by the VitePress
   site config so navigation stays deterministic; CI builds consume it without running Python.
+- **VitePress toolchain lives in `site/`:** the Node/Yarn project (`package.json`, `yarn.lock`,
+  `.yarnrc.yml`, `.yarn/`, `node_modules/`) and the `.vitepress/` root all live under `site/`.
+  Build commands run from there (`cd site && yarn docs:build`); `srcDir: '..'` points VitePress
+  at the repo-root content. A git-ignored `node_modules` symlink at the repo root lets the
+  root-level content resolve its `vue`/`vitepress` imports — recreated by CI before the build.
 
 ---
 
