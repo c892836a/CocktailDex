@@ -251,3 +251,40 @@
   font-weight: 700;
   letter-spacing: 0.01em;
 }
+
+/* ===================================================================== *
+ * 7.1  WIDE-SCREEN CONTENT WIDTH — reclaim the gutters on big monitors  *
+ * ---------------------------------------------------------------------- *
+ * ADDITIVE min-width tiers ONLY. The VitePress default theme is          *
+ * mobile-first: below the breakpoint NOTHING here applies, so laptops    *
+ * (≤1536px), tablets, and phones render the stock geometry byte-for-byte.*
+ *                                                                        *
+ * Two stock caps create the empty space we widen:                        *
+ *   --vp-layout-max-width: 1440px      → centres the whole layout        *
+ *   .VPDoc.has-aside .content-container{max-width:688px}  (scoped @1280) *
+ * The theme emits that container rule with a build-volatile [data-v-…]   *
+ * attribute (specificity 0,4,0). We win WITHOUT touching the hash by     *
+ * repeating the class (.content-container.content-container → 0,4,0) so  *
+ * source order (custom.css loads last) breaks the tie. Never bind to the *
+ * data-v-<hash> value: it changes every build.                          *
+ * ===================================================================== */
+
+/* Tier 1 — desktop monitors (27" 1080p and up). */
+@media (min-width: 1600px) {
+  :root {
+    --vp-layout-max-width: 1648px;
+  }
+  .VPDoc.has-aside .content-container.content-container {
+    max-width: 856px;
+  }
+}
+
+/* Tier 2 — 1440p / ultrawide get a little more room without over-widening prose. */
+@media (min-width: 1920px) {
+  :root {
+    --vp-layout-max-width: 1840px;
+  }
+  .VPDoc.has-aside .content-container.content-container {
+    max-width: 920px;
+  }
+}
