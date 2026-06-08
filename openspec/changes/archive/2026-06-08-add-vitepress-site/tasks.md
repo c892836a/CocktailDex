@@ -41,7 +41,7 @@
 
 - [x] 7.1 Commit all new/changed files (config, package files, workflow, generated sidebar, regenerated index/tags) and push to `main`
 - [x] 7.2 In the GitHub repo, set Settings → Pages → Source = **GitHub Actions** (one-time)
-- [ ] 7.3 Confirm the Actions run succeeds and verify `https://c892836a.github.io/CocktailDex/` and `…/llms.txt` are reachable
+- [x] 7.3 Confirm the Actions run succeeds and verify `https://c892836a.github.io/CocktailDex/` and `…/llms.txt` are reachable
 
 ## 8. Wrap-up
 
