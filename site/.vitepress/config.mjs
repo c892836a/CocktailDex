@@ -17,7 +17,7 @@ const sidebar = JSON.parse(
 // already-base-prefixed path (/CocktailDex/...) to `domain`, so including the /CocktailDex
 // segment here would double it (…/CocktailDex/CocktailDex/…). Origin + base path =
 // https://c892836a.github.io/CocktailDex/… which is exactly what the spec requires.
-const SITE_ORIGIN = 'https://c892836a.github.io'
+const SITE_ORIGIN = 'https://e60207.github.io'
 
 export default defineConfig({
   title: 'CocktailDex',
