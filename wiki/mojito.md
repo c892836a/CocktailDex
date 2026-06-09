@@ -27,7 +27,7 @@ source: raw/archive/mojito.md
 - **Profile:** Refreshing, Citrusy, Light
 - **Tags:** #Rum #Mint #Lime #Muddled #Highball #Refreshing
 
-**Eric — Rating:** _ / 5
+**Eric — Rating:** 5 / 5
 > N/A
 
 **Charlene — Rating:** _ / 5
