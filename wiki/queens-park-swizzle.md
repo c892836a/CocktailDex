@@ -27,7 +27,7 @@ source: raw/archive/queens-park-swizzle.md
 - **Profile:** Spiced, Citrusy, Complex
 - **Tags:** #Rum #Mint #Lime #Swizzle #Tiki #Spiced #Collins
 
-**Eric — Rating:** _ / 5
+**Eric — Rating:** 4 / 5
 > N/A
 
 **Charlene — Rating:** _ / 5
