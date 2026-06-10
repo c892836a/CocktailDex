@@ -11,14 +11,12 @@
             "id": "a5792ee10cb62ff7",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "wiki/sangria.md",
-                "mode": "source",
-                "source": false
+                "file": "photos/bermuda-rum-swizzle.jpg"
               },
-              "icon": "lucide-file",
-              "title": "sangria"
+              "icon": "lucide-image",
+              "title": "bermuda-rum-swizzle"
             }
           }
         ]
@@ -196,9 +194,12 @@
   },
   "active": "a5792ee10cb62ff7",
   "lastOpenFiles": [
-    "index.md",
+    "photos/daiquiri.jpg",
+    "photos/mojito.jpg",
+    "photos/queens-park-swizzle.jpg",
     "wiki/sangria.md",
     "wiki/queens-park-swizzle.md",
+    "index.md",
     "README.md",
     "log.md",
     "raw/inbox/README.md",
