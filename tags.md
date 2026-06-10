@@ -17,21 +17,24 @@ index**: under each tag, every cocktail that carries it.
 ## 1. Base Spirit
 *The dominant spirit. Exactly one is mandatory per cocktail.*
 
-**Vocabulary:** ● `#Rum` · ○ `#Gin` · ○ `#Vodka` · ○ `#Whiskey` · ○ `#Tequila` · ○ `#Mezcal` · ○ `#Brandy` · ○ `#Cognac` · ○ `#Aquavit` · ○ `#Liqueur` · ○ `#FortifiedWine`
+**Vocabulary:** ● `#Rum` · ○ `#Gin` · ○ `#Vodka` · ○ `#Whiskey` · ○ `#Tequila` · ○ `#Mezcal` · ○ `#Brandy` · ○ `#Cognac` · ○ `#Aquavit` · ○ `#Liqueur` · ○ `#FortifiedWine` · ● `#Wine`
 
 - **#Rum** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
+- **#Wine** — [Sangria](./wiki/sangria.md)
 
 ---
 
 ## 2. Ingredient
 *Distinctive non-base components (souring agent, sweetener, modifiers, aromatics).*
 
-**Vocabulary:** ● `#Lime` · ● `#Mint` · ● `#Falernum` · ● `#Pineapple` · ○ `#Lemon` · ○ `#Orange` · ○ `#Sugar` · ○ `#Demerara` · ○ `#Angostura` · ○ `#Soda` · ○ `#Campari` · ○ `#Vermouth` · ○ `#Egg` · ○ `#Cream` · ○ `#Ginger` · ○ `#Coffee`
+**Vocabulary:** ● `#Lime` · ● `#Mint` · ● `#Falernum` · ● `#Pineapple` · ● `#Lemon` · ● `#Orange` · ○ `#Sugar` · ○ `#Demerara` · ○ `#Angostura` · ○ `#Soda` · ○ `#Campari` · ○ `#Vermouth` · ○ `#Egg` · ○ `#Cream` · ○ `#Ginger` · ○ `#Coffee`
 
 - **#Lime** — [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
 - **#Mint** — [Mojito](./wiki/mojito.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
 - **#Falernum** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md)
 - **#Pineapple** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md)
+- **#Lemon** — [Sangria](./wiki/sangria.md)
+- **#Orange** — [Sangria](./wiki/sangria.md)
 
 ---
 
@@ -40,38 +43,40 @@ index**: under each tag, every cocktail that carries it.
 
 **Vocabulary:** ● `#Refreshing` · ● `#Spiced` · ● `#Fruity` · ○ `#Citrusy` · ○ `#Tart` · ○ `#Sweet` · ○ `#Bitter` · ○ `#Herbal` · ○ `#Boozy` · ○ `#Complex` · ○ `#Light` · ○ `#Creamy` · ○ `#Smoky` · ○ `#Dry`
 
-- **#Refreshing** — [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md)
+- **#Refreshing** — [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md), [Sangria](./wiki/sangria.md)
 - **#Spiced** — [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
-- **#Fruity** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md)
+- **#Fruity** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Sangria](./wiki/sangria.md)
 
 ---
 
 ## 4. Technique
 *How the drink is built.*
 
-**Vocabulary:** ● `#Shaken` · ● `#Muddled` · ● `#Swizzle` · ○ `#Stirred` · ○ `#Built` · ○ `#Blended` · ○ `#Thrown` · ○ `#Layered` · ○ `#DryShake`
+**Vocabulary:** ● `#Shaken` · ● `#Muddled` · ● `#Swizzle` · ○ `#Stirred` · ● `#Built` · ○ `#Blended` · ○ `#Thrown` · ○ `#Layered` · ○ `#DryShake`
 
 - **#Shaken** — [Daiquiri](./wiki/daiquiri.md)
 - **#Muddled** — [Mojito](./wiki/mojito.md)
 - **#Swizzle** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
+- **#Built** — [Sangria](./wiki/sangria.md)
 
 ---
 
 ## 5. Family / Style
 *The cocktail family it belongs to.*
 
-**Vocabulary:** ● `#Tiki` · ● `#Highball` · ● `#Sour` · ○ `#OldFashioned` · ○ `#Martini` · ○ `#Fizz` · ○ `#Punch` · ○ `#Spritz` · ○ `#Daisy` · ○ `#Flip` · ○ `#Julep`
+**Vocabulary:** ● `#Tiki` · ● `#Highball` · ● `#Sour` · ○ `#OldFashioned` · ○ `#Martini` · ○ `#Fizz` · ● `#Punch` · ○ `#Spritz` · ○ `#Daisy` · ○ `#Flip` · ○ `#Julep`
 
 - **#Tiki** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
 - **#Highball** — [Mojito](./wiki/mojito.md)
 - **#Sour** — [Daiquiri](./wiki/daiquiri.md)
+- **#Punch** — [Sangria](./wiki/sangria.md)
 
 ---
 
 ## 6. Glassware
 *Serving vessel. ('Highball'/'Martini' as families live above; the tall and stemmed glasses here are 'Collins' / 'Coupe' / 'NickAndNora'.)*
 
-**Vocabulary:** ● `#Collins` · ● `#Coupe` · ○ `#Rocks` · ○ `#NickAndNora` · ○ `#TikiMug` · ○ `#Hurricane` · ○ `#Wine` · ○ `#Flute`
+**Vocabulary:** ● `#Collins` · ● `#Coupe` · ○ `#Rocks` · ○ `#NickAndNora` · ○ `#TikiMug` · ○ `#Hurricane` · ○ `#WineGlass` · ○ `#Flute`
 
 - **#Collins** — [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
 - **#Coupe** — [Daiquiri](./wiki/daiquiri.md)

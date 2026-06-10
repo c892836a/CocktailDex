@@ -5,6 +5,14 @@ gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppabl
 
 ---
 
+## 2026-06-09 — Ingest
+
+- Ingested **Sangria** from `raw/inbox/Sangria.md`.
+- Completed Background, Glassware (partially), Ingredients normalization, Instruction, Garnish, Profile, and Tags from the web (Source: thisdayinwinehistory.com).
+- Added `Wine` to Base Spirit and renamed `Wine` Glassware to `WineGlass` in `scripts/wiki.py` to avoid tag collision.
+- Linked **Other Similar Cocktails**: mutual link with **Bermuda Rum Swizzle**.
+- Updated `index.md`, `tags.md`, and VitePress sidebar.
+
 ## 2026-06-08 — VitePress site
 
 Added a static **VitePress** site over the existing wiki markdown, published to GitHub Pages,

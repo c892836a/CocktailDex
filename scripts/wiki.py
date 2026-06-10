@@ -24,7 +24,7 @@ VOCABULARY = {
     "Base Spirit": {
         "blurb": "The dominant spirit. Exactly one is mandatory per cocktail.",
         "tags": ["Rum", "Gin", "Vodka", "Whiskey", "Tequila", "Mezcal",
-                 "Brandy", "Cognac", "Aquavit", "Liqueur", "FortifiedWine"],
+                 "Brandy", "Cognac", "Aquavit", "Liqueur", "FortifiedWine", "Wine"],
     },
     "Ingredient": {
         "blurb": "Distinctive non-base components (souring agent, sweetener, modifiers, aromatics).",
@@ -52,7 +52,7 @@ VOCABULARY = {
         "blurb": ("Serving vessel. ('Highball'/'Martini' as families live above; the tall "
                   "and stemmed glasses here are 'Collins' / 'Coupe' / 'NickAndNora'.)"),
         "tags": ["Collins", "Coupe", "Rocks", "NickAndNora",
-                 "TikiMug", "Hurricane", "Wine", "Flute"],
+                 "TikiMug", "Hurricane", "WineGlass", "Flute"],
     },
 }
 
