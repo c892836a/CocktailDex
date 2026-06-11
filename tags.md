@@ -17,9 +17,10 @@ index**: under each tag, every cocktail that carries it.
 ## 1. Base Spirit
 *The dominant spirit. Exactly one is mandatory per cocktail.*
 
-**Vocabulary:** ● `#Rum` · ○ `#Gin` · ○ `#Vodka` · ● `#Whiskey` · ○ `#Tequila` · ○ `#Mezcal` · ○ `#Brandy` · ○ `#Cognac` · ○ `#Aquavit` · ○ `#Liqueur` · ○ `#FortifiedWine` · ● `#Wine`
+**Vocabulary:** ● `#Rum` · ○ `#Gin` · ● `#Vodka` · ● `#Whiskey` · ○ `#Tequila` · ○ `#Mezcal` · ○ `#Brandy` · ○ `#Cognac` · ○ `#Aquavit` · ○ `#Liqueur` · ○ `#FortifiedWine` · ● `#Wine`
 
 - **#Rum** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
+- **#Vodka** — [Espresso Martini](./wiki/espresso-martini.md)
 - **#Whiskey** — [The Salty Shaker](./wiki/the-salty-shaker.md)
 - **#Wine** — [Sangria](./wiki/sangria.md)
 
@@ -28,7 +29,7 @@ index**: under each tag, every cocktail that carries it.
 ## 2. Ingredient
 *Distinctive non-base components (souring agent, sweetener, modifiers, aromatics).*
 
-**Vocabulary:** ● `#Lime` · ● `#Mint` · ● `#Falernum` · ● `#Pineapple` · ● `#Mango` · ● `#Lemon` · ● `#Orange` · ○ `#Sugar` · ○ `#Demerara` · ○ `#Angostura` · ○ `#Soda` · ○ `#Campari` · ○ `#Vermouth` · ○ `#Egg` · ○ `#Cream` · ○ `#Ginger` · ○ `#Coffee`
+**Vocabulary:** ● `#Lime` · ● `#Mint` · ● `#Falernum` · ● `#Pineapple` · ● `#Mango` · ● `#Lemon` · ● `#Orange` · ● `#Sugar` · ○ `#Demerara` · ○ `#Angostura` · ○ `#Soda` · ○ `#Campari` · ○ `#Vermouth` · ○ `#Egg` · ○ `#Cream` · ○ `#Ginger` · ● `#Coffee`
 
 - **#Lime** — [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md), [The Salty Shaker](./wiki/the-salty-shaker.md)
 - **#Mint** — [Mojito](./wiki/mojito.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
@@ -37,17 +38,21 @@ index**: under each tag, every cocktail that carries it.
 - **#Mango** — [The Salty Shaker](./wiki/the-salty-shaker.md)
 - **#Lemon** — [Sangria](./wiki/sangria.md)
 - **#Orange** — [Sangria](./wiki/sangria.md)
+- **#Sugar** — [Espresso Martini](./wiki/espresso-martini.md)
+- **#Coffee** — [Espresso Martini](./wiki/espresso-martini.md)
 
 ---
 
 ## 3. Flavor / Profile
 *The taste experience.*
 
-**Vocabulary:** ● `#Refreshing` · ● `#Spiced` · ● `#Fruity` · ○ `#Citrusy` · ○ `#Tart` · ○ `#Sweet` · ○ `#Bitter` · ○ `#Herbal` · ○ `#Boozy` · ○ `#Complex` · ○ `#Light` · ○ `#Creamy` · ○ `#Smoky` · ○ `#Dry`
+**Vocabulary:** ● `#Refreshing` · ● `#Spiced` · ● `#Fruity` · ○ `#Citrusy` · ○ `#Tart` · ○ `#Sweet` · ○ `#Bitter` · ○ `#Herbal` · ● `#Boozy` · ● `#Complex` · ○ `#Light` · ○ `#Creamy` · ○ `#Smoky` · ○ `#Dry`
 
 - **#Refreshing** — [Daiquiri](./wiki/daiquiri.md), [Mojito](./wiki/mojito.md), [Sangria](./wiki/sangria.md), [The Salty Shaker](./wiki/the-salty-shaker.md)
 - **#Spiced** — [Queen's Park Swizzle](./wiki/queens-park-swizzle.md), [The Salty Shaker](./wiki/the-salty-shaker.md)
 - **#Fruity** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Sangria](./wiki/sangria.md)
+- **#Boozy** — [Espresso Martini](./wiki/espresso-martini.md)
+- **#Complex** — [Espresso Martini](./wiki/espresso-martini.md)
 
 ---
 
@@ -56,7 +61,7 @@ index**: under each tag, every cocktail that carries it.
 
 **Vocabulary:** ● `#Shaken` · ● `#Muddled` · ● `#Swizzle` · ○ `#Stirred` · ● `#Built` · ○ `#Blended` · ○ `#Thrown` · ○ `#Layered` · ○ `#DryShake`
 
-- **#Shaken** — [Daiquiri](./wiki/daiquiri.md), [The Salty Shaker](./wiki/the-salty-shaker.md)
+- **#Shaken** — [Daiquiri](./wiki/daiquiri.md), [Espresso Martini](./wiki/espresso-martini.md), [The Salty Shaker](./wiki/the-salty-shaker.md)
 - **#Muddled** — [Mojito](./wiki/mojito.md)
 - **#Swizzle** — [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md), [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
 - **#Built** — [Sangria](./wiki/sangria.md)
@@ -81,7 +86,7 @@ index**: under each tag, every cocktail that carries it.
 **Vocabulary:** ● `#Collins` · ● `#Coupe` · ○ `#Rocks` · ○ `#NickAndNora` · ○ `#TikiMug` · ○ `#Hurricane` · ○ `#WineGlass` · ○ `#Flute`
 
 - **#Collins** — [Queen's Park Swizzle](./wiki/queens-park-swizzle.md)
-- **#Coupe** — [Daiquiri](./wiki/daiquiri.md)
+- **#Coupe** — [Daiquiri](./wiki/daiquiri.md), [Espresso Martini](./wiki/espresso-martini.md)
 
 ---
 

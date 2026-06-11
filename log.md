@@ -7,6 +7,14 @@ gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppabl
 
 ## 2026-06-10 — Ingest
 
+- Ingested **Espresso Martini** from `raw/inbox/Espresso Martini.md`.
+- Completed Background and historical context from the web (Source: mclarenvalecellars.com).
+- Assigned 7 tags: `#Vodka`, `#Coffee`, `#Sugar`, `#Boozy`, `#Complex`, `#Shaken`, `#Coupe`.
+- Linked **Other Similar Cocktails**: **TBD** (no existing cocktails met the similarity threshold).
+- Updated `index.md`, `tags.md`, and VitePress sidebar.
+
+## 2026-06-10 — Ingest
+
 - Ingested **The Salty Shaker** from `raw/inbox/The salty shaker.md`.
 - Completed Background, Glassware, and enriched recipe context from the web (Source: murlarkey.com).
 - Added `Mango` to the **Ingredient** tag vocabulary in `scripts/wiki.py`.
