@@ -152,14 +152,14 @@ actually defines the drink). The canonical vocabulary lives in `scripts/wiki.py`
 needed, **add it to `VOCABULARY` in `scripts/wiki.py`, then recompile** (§5). Tag tokens are
 flat — a name belongs to exactly one dimension (the script enforces this).
 
-| # | Dimension | What it captures | Example tags |
-|---|-----------|------------------|--------------|
-| 1 | **Base Spirit** | the dominant spirit | `#Gin` `#Vodka` `#Rum` `#Whiskey` `#Tequila` `#Brandy` |
-| 2 | **Ingredient** | distinctive non-base components | `#Lime` `#Mint` `#Campari` `#Falernum` `#Angostura` |
-| 3 | **Flavor / Profile** | the taste experience | `#Refreshing` `#Citrusy` `#Spiced` `#Bitter` `#Boozy` `#Complex` |
-| 4 | **Technique** | how it's made | `#Shaken` `#Stirred` `#Built` `#Muddled` `#Swizzle` `#Blended` |
-| 5 | **Family / Style** | the cocktail family | `#Sour` `#Highball` `#Tiki` `#OldFashioned` `#Fizz` `#Punch` |
-| 6 | **Glassware** | serving vessel | `#Coupe` `#Collins` `#Rocks` `#NickAndNora` `#TikiMug` |
+| #   | Dimension            | What it captures                | Example tags                                                     |
+| --- | -------------------- | ------------------------------- | ---------------------------------------------------------------- |
+| 1   | **Base Spirit**      | the dominant spirit             | `#Gin` `#Vodka` `#Rum` `#Whiskey` `#Tequila` `#Brandy`           |
+| 2   | **Ingredient**       | distinctive non-base components | `#Lime` `#Mint` `#Campari` `#Falernum` `#Angostura`              |
+| 3   | **Flavor / Profile** | the taste experience            | `#Refreshing` `#Citrusy` `#Spiced` `#Bitter` `#Boozy` `#Complex` |
+| 4   | **Technique**        | how it's made                   | `#Shaken` `#Stirred` `#Built` `#Muddled` `#Swizzle` `#Blended`   |
+| 5   | **Family / Style**   | the cocktail family             | `#Sour` `#Highball` `#Tiki` `#OldFashioned` `#Fizz` `#Punch`     |
+| 6   | **Glassware**        | serving vessel                  | `#Coupe` `#Collins` `#Rocks` `#NickAndNora` `#TikiMug`           |
 
 **Tag rules:**
 - 3–7 per cocktail. Fewer than 3 = under-described; more than 7 = noise.
@@ -223,20 +223,29 @@ The wiki is your knowledge base; answer **from it**, not from scratch.
 
 ---
 
-## 7. Similar-cocktail linking algorithm
-
-The owner's card has an **Other Similar Cocktails** field. Populate it by ranking the
-*existing* cocktails in `wiki/` against the current one on **three axes**:
-
-1. **Structure** (highest weight) — same Base Spirit **and** shared core roles: souring
-   agent (lime/lemon), sweetener (syrup/sugar), and key modifiers; plus same Family/Style.
-   *Daiquiri ↔ Mojito* both = white rum + lime + sugar.
-2. **Flavor** (medium weight) — shared Flavor/Profile tags (`#Refreshing`, `#Spiced`…).
-3. **Technique** (lower weight) — same Technique tag (`#Swizzle`, `#Shaken`…).
-
-Score each candidate by weighted overlap, link the **top 2–4** (skip weak matches), and
-add a brief "why" only if helpful. **Prefer mutual links** — when you link A→B, also add
-B→A. Re-evaluate neighbours' similar-lists whenever you ingest a new related drink.
+### 7. Similar-cocktail linking algorithm  
+  
+The owner's card has an **Other Similar Cocktails** field. Populate it by calculating a precise similarity score for existing cocktails in `wiki/` against the current one based on a **Discrete Scoring System**.  
+  
+#### Scoring Rubric:  
+1. Structure & Identity:
+* Same Base Spirit: **+3 points**  
+* Same Family/Style: **+2 points**  
+* Shared Souring Agent (e.g., lime/lemon): **+1 point**  
+* Shared Sweetener (e.g., simple syrup/sugar): **+1 point**  
+2. Flavor Profile:
+* Each shared Flavor/Profile tag (e.g., `#Refreshing`, `#Spiced`): **+1 point** (Cap at a **maximum of 2 points**)  
+3. Technique:
+* Same Technique tag (e.g., `#Swizzle`, `#Shaken`): **+1 point**  
+  
+#### Linking Rules & Thresholds:  
+1. **Strict Threshold:** A candidate cocktail must achieve a **total score of ≥ 5** to be eligible for linking.  
+2. **Selection & Tie-breaking:** Link the **top 2–4** eligible candidates. If candidates have the same score, prioritize the one with a higher "Structure & Identity" subscore.  
+3. **Empty Results Allowed:** If no existing cocktails achieve a score of $\ge 5$, fill the field with **TBD** (do not force weak matches).  
+4. **Mutual Links & Explanations:**  
+* **Prefer mutual links:** When you link $A \rightarrow B$, always ensure $B \rightarrow A$ is updated accordingly.  
+* Add a brief, concise "why" explanation only if it provides meaningful context.  
+5. **Dynamic Re-evaluation:** Re-evaluate and refresh neighbors' similar-lists whenever you ingest a new related drink.
 
 ---
 
