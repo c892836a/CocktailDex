@@ -33,4 +33,4 @@ source: raw/archive/daiquiri.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Mojito](./mojito.md) (same white rum + lime base, lengthened with mint & soda), [Queen's Park Swizzle](./queens-park-swizzle.md) (a swizzled, spiced elaboration of the rum + lime core)
+**Other Similar Cocktails:** [Mojito](./mojito.md) (same white rum + lime base, lengthened with mint & soda), [Queen's Park Swizzle](./queens-park-swizzle.md) (a swizzled, spiced elaboration of the rum + lime core), [The Salty Shaker](./the-salty-shaker.md) (a savory, whiskey-based Sour variation)

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "wiki/the-salty-shaker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "the-salty-shaker"
             }
           }
         ]
@@ -196,26 +196,32 @@
   },
   "active": "a5792ee10cb62ff7",
   "lastOpenFiles": [
-    "tags.md",
+    "wiki/bermuda-rum-swizzle.md",
+    "wiki/queens-park-swizzle.md",
+    "wiki/the-salty-shaker.md",
+    "wiki/sangria.md",
+    "wiki/mojito.md",
+    "wiki/daiquiri.md",
+    "photos/the-salty-shaker/4C689230-1259-4494-8BFA-ABF8C67FD9E6.jpg",
+    "photos/the-salty-shaker",
+    "raw/inbox/README.md",
+    "raw/archive/the-salty-shaker.md",
+    "raw/inbox/The salty shaker.md",
+    "raw/archive/The salty shaker.md",
+    "photos/README.md",
     "CLAUDE.md",
+    "tags.md",
     "GEMINI.md",
     "README.md",
-    "photos/README.md",
-    "wiki/sangria.md",
     "photos/sangria.jpg",
     "photos/queens-park-swizzle.jpg",
     "photos/Untitled.md",
     "photos/daiquiri.jpg",
     "photos/bermuda-rum-swizzle.jpg",
     "photos/mojito.jpg",
-    "wiki/queens-park-swizzle.md",
     "index.md",
     "log.md",
-    "raw/inbox/README.md",
     "raw/archive/sangria.md",
-    "raw/inbox/Sangria.md",
-    "wiki/bermuda-rum-swizzle.md",
-    "wiki/mojito.md",
-    "wiki/daiquiri.md"
+    "raw/inbox/Sangria.md"
   ]
 }

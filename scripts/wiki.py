@@ -28,7 +28,7 @@ VOCABULARY = {
     },
     "Ingredient": {
         "blurb": "Distinctive non-base components (souring agent, sweetener, modifiers, aromatics).",
-        "tags": ["Lime", "Mint", "Falernum", "Pineapple", "Lemon", "Orange",
+        "tags": ["Lime", "Mint", "Falernum", "Pineapple", "Mango", "Lemon", "Orange",
                  "Sugar", "Demerara", "Angostura", "Soda", "Campari",
                  "Vermouth", "Egg", "Cream", "Ginger", "Coffee"],
     },

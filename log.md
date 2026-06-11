@@ -5,6 +5,15 @@ gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppabl
 
 ---
 
+## 2026-06-10 — Ingest
+
+- Ingested **The Salty Shaker** from `raw/inbox/The salty shaker.md`.
+- Completed Background, Glassware, and enriched recipe context from the web (Source: murlarkey.com).
+- Added `Mango` to the **Ingredient** tag vocabulary in `scripts/wiki.py`.
+- Assigned 7 tags: `#Whiskey`, `#Lime`, `#Mango`, `#Spiced`, `#Refreshing`, `#Shaken`, `#Sour`.
+- Linked **Other Similar Cocktails**: mutual link with **Daiquiri** (Shaken Sour family).
+- Updated `index.md`, `tags.md`, and VitePress sidebar.
+
 ## 2026-06-09 — Ingest
 
 - Ingested **Sangria** from `raw/inbox/Sangria.md`.

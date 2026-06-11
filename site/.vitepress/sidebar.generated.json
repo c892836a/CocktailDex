@@ -1,6 +1,6 @@
 [
   {
-    "text": "Cocktails (5)",
+    "text": "Cocktails (6)",
     "collapsed": false,
     "items": [
       {
@@ -22,6 +22,10 @@
       {
         "text": "Sangria",
         "link": "/wiki/sangria"
+      },
+      {
+        "text": "The Salty Shaker",
+        "link": "/wiki/the-salty-shaker"
       }
     ]
   }
