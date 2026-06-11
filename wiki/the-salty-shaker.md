@@ -33,4 +33,4 @@ source: raw/archive/The salty shaker.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Both are Shaken Sours using lime, with fruit/sugar providing the sweetness)
+**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Score 5: both are shaken sours using lime)

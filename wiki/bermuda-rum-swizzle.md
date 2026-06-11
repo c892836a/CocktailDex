@@ -38,4 +38,4 @@ source: raw/archive/bermuda-rum-swizzle.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Queen's Park Swizzle](./queens-park-swizzle.md) (the other great rum Swizzle — same technique & Tiki family), [Sangria](./sangria.md) (another classic fruity punch-style drink with citrus and depth)
+**Other Similar Cocktails:** [Queen's Park Swizzle](./queens-park-swizzle.md) (Score 8: same rum base, swizzle technique, and Tiki style)

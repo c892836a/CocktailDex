@@ -38,4 +38,4 @@ source: raw/archive/sangria.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Bermuda Rum Swizzle](./bermuda-rum-swizzle.md) (another classic fruity punch-style drink with citrus and depth)
+**Other Similar Cocktails:** TBD

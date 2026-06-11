@@ -118,9 +118,10 @@ Ingest the new cocktails in raw/inbox/.
 **Prompt (explicit, if you want to spell it out)**
 ```
 Process every file in raw/inbox/: complete the missing fields from the web (cite a source
-for Background), normalise the ingredients, assign 3–7 tags, link similar cocktails with
-mutual links, write the finished cards to wiki/, update index.md / tags.md / log.md, and
-move the originals to raw/archive/. Don't touch the Rating or Modified Variation fields.
+for Background), normalise the ingredients, assign 3–7 tags, link similar cocktails using
+the scoring system in CLAUDE.md (threshold ≥ 5) with mutual links, write the finished cards
+to wiki/, update index.md / tags.md / log.md, and move the originals to raw/archive/.
+Don't touch the Rating or Modified Variation fields.
 ```
 
 **What you get back:** a summary of what was added, which fields were filled from the web
@@ -211,18 +212,20 @@ apply it wherever it fits.
 
 ## 6. Manage "similar cocktails" links
 
-Every card's **Other Similar Cocktails** is auto-filled by ranking your other drinks on
-**structure → flavour → technique** (see `CLAUDE.md` §7), and links are made mutual.
+Every card's **Other Similar Cocktails** is auto-filled by ranking your other drinks using
+a **Discrete Scoring System** (Structure, Flavor, Technique) with a strict threshold (see
+`CLAUDE.md` §7), and links are made mutual.
 
 **Re-link everything (e.g. after adding several drinks)**
 ```
 Re-evaluate the "Other Similar Cocktails" links across all wiki/ cards using the
-structure/flavour/technique algorithm in CLAUDE.md, and make sure every link is mutual.
+Discrete Scoring System in CLAUDE.md (threshold ≥ 5), and make sure every link is mutual.
 ```
 
 **Re-link one drink**
 ```
-Refresh the similar-cocktail links for wiki/<slug>.md and add the matching back-links.
+Refresh the similar-cocktail links for wiki/<slug>.md using the scoring system in
+CLAUDE.md and add the matching back-links.
 ```
 
 ---
@@ -287,7 +290,7 @@ a full history of every AI edit.)
 | Find top-rated | `Which cocktails did Eric rate 5/5?` |
 | Rebuild index & tags | `python scripts/wiki.py compile` — or *"rebuild the index"* |
 | Fix tags | `Review and fix the tags on wiki/<slug>.md against the vocabulary.` |
-| Refresh similar links | `Re-evaluate all similar-cocktail links and make them mutual.` |
+| Refresh similar links | `Re-evaluate similar links using the scoring system (threshold ≥ 5) and make mutual.` |
 | Health check | `python scripts/wiki.py lint` — or *"lint the wiki"* |
 | Record a rating | `Set <person> — Rating on wiki/<slug>.md to X/5, comment "…". My words verbatim.` |
 | Fix a recipe | `Re-ingest the corrected file in raw/inbox/ and overwrite its card.` |

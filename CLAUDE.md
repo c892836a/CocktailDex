@@ -122,21 +122,21 @@ source link: (source: https://…). Never invent history.}
 
 **Field completion authority** (who may fill each field):
 
-| Field | You may complete? | Notes |
-|-------|:----------------:|-------|
-| Name | — | from the source |
-| Background | ✅ web | cite a source; 2–4 sentences |
-| Photo | — | owner adds the image file; you only write the link path |
-| Glassware | ✅ | |
-| Ingredients | ✅ | normalise to `qty + ingredient`, one per line |
-| Instruction | ✅ | |
-| Garnish | ✅ | |
-| Profile | ✅ | |
-| Tags | ✅ | assign 3–7 from controlled vocabulary (§4) |
-| **Eric — Rating** | ❌ **HUMAN ONLY** | carry over verbatim; never write/guess/change |
-| **Charlene — Rating** | ❌ **HUMAN ONLY** | carry over verbatim; never write/guess/change |
-| **Modified Variation** | ❌ **HUMAN ONLY** | carry over verbatim |
-| Other Similar Cocktails | ✅ | auto-linked via §7 |
+| Field                   | You may complete? | Notes                                                   |
+| ----------------------- | :---------------: | ------------------------------------------------------- |
+| Name                    |         —         | from the source                                         |
+| Background              |       ✅ web       | cite a source; 2–4 sentences                            |
+| Photo                   |         —         | owner adds the image file; you only write the link path |
+| Glassware               |         ✅         |                                                         |
+| Ingredients             |         ✅         | normalise to `qty + ingredient`, one per line           |
+| Instruction             |         ✅         |                                                         |
+| Garnish                 |         ✅         |                                                         |
+| Profile                 |         ✅         |                                                         |
+| Tags                    |         ✅         | assign 3–7 from controlled vocabulary (§4)              |
+| **Eric — Rating**       | ❌ **HUMAN ONLY**  | carry over verbatim; never write/guess/change           |
+| **Charlene — Rating**   | ❌ **HUMAN ONLY**  | carry over verbatim; never write/guess/change           |
+| **Modified Variation**  | ❌ **HUMAN ONLY**  | carry over verbatim                                     |
+| Other Similar Cocktails |         ✅         | auto-linked via §7                                      |
 
 > Note: this field was called **Theme** in the owner's original template. It is renamed
 > **Tags** here because it now spans 6 dimensions, not just style/theme.
@@ -241,7 +241,7 @@ The owner's card has an **Other Similar Cocktails** field. Populate it by calcul
 #### Linking Rules & Thresholds:  
 1. **Strict Threshold:** A candidate cocktail must achieve a **total score of ≥ 5** to be eligible for linking.  
 2. **Selection & Tie-breaking:** Link the **top 2–4** eligible candidates. If candidates have the same score, prioritize the one with a higher "Structure & Identity" subscore.  
-3. **Empty Results Allowed:** If no existing cocktails achieve a score of $\ge 5$, fill the field with **TBD** (do not force weak matches).  
+3. **Empty Results Allowed:** If no existing cocktails achieve a score of $\ge 5$, f **TBD** (do not force weak matches).  
 4. **Mutual Links & Explanations:**  
 * **Prefer mutual links:** When you link $A \rightarrow B$, always ensure $B \rightarrow A$ is updated accordingly.  
 * Add a brief, concise "why" explanation only if it provides meaningful context.  

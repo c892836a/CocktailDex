@@ -35,4 +35,4 @@ source: raw/archive/mojito.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Queen's Park Swizzle](./queens-park-swizzle.md) (the "grown-up" rum + mint + lime cousin), [Daiquiri](./daiquiri.md) (same white rum + lime base, without the mint)
+**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Score 6: shared rum base, lime, and sweetener), [Queen's Park Swizzle](./queens-park-swizzle.md) (Score 5: shared rum base, lime, and sweetener)

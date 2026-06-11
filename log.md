@@ -5,6 +5,18 @@ gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppabl
 
 ---
 
+## 2026-06-10 — Documentation Update
+
+- Updated `README.md` §6 and the prompt cheat-sheet to reflect the new Similar-cocktail linking algorithm (§7 in `CLAUDE.md`).
+- Refined the explicit Ingest prompt to include the scoring system and threshold requirement.
+
+## 2026-06-10 — Similarity Re-evaluation
+
+- Re-calculated all 'Other Similar Cocktails' links across 7 cards using the strict scoring rubric (§7).
+- Updated links to include scores and mutual back-links.
+- Removed links failing the threshold (Score < 5), such as Sangria and Bermuda Rum Swizzle's previous cross-links.
+- Verified consistency via compile and lint.
+
 ## 2026-06-10 — Ingest
 
 - Ingested **Espresso Martini** from `raw/inbox/Espresso Martini.md`.

@@ -35,4 +35,4 @@ source: raw/archive/queens-park-swizzle.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Bermuda Rum Swizzle](./bermuda-rum-swizzle.md) (same swizzle technique & Tiki family), [Mojito](./mojito.md) (shared rum + mint + lime structure), [Daiquiri](./daiquiri.md) (rum + lime backbone)
+**Other Similar Cocktails:** [Bermuda Rum Swizzle](./bermuda-rum-swizzle.md) (Score 8: same rum base, swizzle technique, and Tiki style), [Mojito](./mojito.md) (Score 5: shared rum base, lime, and sweetener), [Daiquiri](./daiquiri.md) (Score 5: shared rum base, lime, and sweetener)
