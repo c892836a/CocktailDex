@@ -13,7 +13,7 @@ source: raw/archive/The salty shaker.md
 
 **Background:** The Salty Shaker is a signature cocktail from MurLarkey Distilled Spirits featuring their unique "Salsa Borracha" Whiskey. This savory spirit is distilled from corn and infused with 15 all-natural botanicals, including tomatillos, ancho chilies, jalapeños, cilantro, and lime, mimicking the flavor profile of a fresh salsa. (source: https://murlarkey.com/spirits/papis-salsa-borracha-whiskey/)
 
-![[4C689230-1259-4494-8BFA-ABF8C67FD9E6.jpg]]
+![[the-salty-shaker.jpg]]
 
 - **Glassware:** Nick & Nora
 - **Ingredients:**
