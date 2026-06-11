@@ -110,12 +110,12 @@ source link: (source: https://…). Never invent history.}
 - **Tags:** #{Tag1} #{Tag2} #{Tag3}   ← 3–7 tags, drawn from the 6 dimensions (§4)
 
 **Eric — Rating:** _ / 5
-> {Eric's comment, or N/A}
+> N/A
 
 **Charlene — Rating:** _ / 5
-> {Charlene's comment, or N/A}
+> N/A
 
-**Modified Variation:** {owner's tweak, or N/A}
+**Modified Variation:** N/A
 
 **Other Similar Cocktails:** [Name](./other-slug.md), [Name](./other-slug.md)
 ```
@@ -181,9 +181,10 @@ Trigger: files present in `raw/inbox/`, or the owner says "ingest".
       (e.g. `Queen's Park Swizzle` → `queens-park-swizzle`).
    2. **Complete missing fields** (Background, Glassware, Ingredients, Instruction,
       Garnish, Profile) from the web or reliable knowledge. For Background and any
-      historical claim, **cite a source URL** in the card. Normalise Ingredients to
+      historical claim, cite a source URL in the card. Normalise Ingredients to
       `qty + ingredient`, one per line. **Never touch the three human-only fields** — copy
-      Rating/Modified Variation across verbatim (blank stays `_ / 5` / `N/A`).
+      Rating/Modified Variation across verbatim. If a rating or its comment blockquote
+      is blank or contains a placeholder, use `_ / 5` and `> N/A` respectively.
    3. **Assign 3–7 tags** (§4). Add to the `**Tags:**` line and to frontmatter.
    4. **Link similar cocktails** (§7): scan existing `wiki/` cards, score overlap, link the
       top 2–4. Add **mutual back-links** to those other cards.
@@ -278,7 +279,7 @@ End a lint with a short report + the `log.md` entry `## YYYY-MM-DD — Lint`.
 
 1. **Ratings & Modified Variation are HUMAN-ONLY.** Never write, estimate, infer, or alter
    `Eric — Rating`, `Charlene — Rating`, or `Modified Variation`. Carry them across raw→wiki
-   exactly as written; if blank, leave `_ / 5` and `N/A`.
+   exactly as written; if a rating or its comment is blank/placeholder, use `_ / 5` and `N/A`.
 2. **`raw/archive/` is immutable.** Once a file is archived, never edit it. To revise, the
    owner drops a corrected file in `raw/inbox/` and you re-ingest (overwrite the `wiki/` card).
 3. **No fabricated facts.** Background and any historical/sourcing claim must be grounded in

@@ -33,4 +33,4 @@ source: raw/archive/The salty shaker.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Score 5: both are shaken sours using lime)
+**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Score 5: both are shaken sours using lime), [Long Island Ice Tea](./long-island-ice-tea.md) (Score 5: both are potent Highballs with citrus)

@@ -35,4 +35,4 @@ source: raw/archive/mojito.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Score 6: shared rum base, lime, and sweetener), [Queen's Park Swizzle](./queens-park-swizzle.md) (Score 5: shared rum base, lime, and sweetener)
+**Other Similar Cocktails:** [Daiquiri](./daiquiri.md) (Score 6: shared rum base, lime, and sweetener), [Queen's Park Swizzle](./queens-park-swizzle.md) (Score 5: shared rum base, lime, and sweetener), [Long Island Ice Tea](./long-island-ice-tea.md) (Score 8: shared Rum base, Highball style, and refreshing profile)

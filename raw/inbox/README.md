@@ -35,10 +35,10 @@ When this folder is empty, everything has been processed.
 - **Profile:** TBD
 
 **Eric — Rating:** _ / 5
-> {your comment, or N/A}
+> N/A
 
 **Charlene — Rating:** _ / 5
-> {your comment, or N/A}
+> N/A
 
 **Modified Variation:** N/A
 ```

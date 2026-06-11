@@ -1,6 +1,6 @@
 [
   {
-    "text": "Cocktails (7)",
+    "text": "Cocktails (8)",
     "collapsed": false,
     "items": [
       {
@@ -14,6 +14,10 @@
       {
         "text": "Espresso Martini",
         "link": "/wiki/espresso-martini"
+      },
+      {
+        "text": "Long Island Ice Tea",
+        "link": "/wiki/long-island-ice-tea"
       },
       {
         "text": "Mojito",

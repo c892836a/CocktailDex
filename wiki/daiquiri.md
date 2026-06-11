@@ -33,4 +33,4 @@ source: raw/archive/daiquiri.md
 
 **Modified Variation:** N/A
 
-**Other Similar Cocktails:** [Mojito](./mojito.md) (Score 6: shared rum base, lime, and sweetener), [Queen's Park Swizzle](./queens-park-swizzle.md) (Score 5: shared rum base, lime, and sweetener), [The Salty Shaker](./the-salty-shaker.md) (Score 5: both are shaken sours using lime)
+**Other Similar Cocktails:** [Mojito](./mojito.md) (Score 6: shared rum base, lime, and sweetener), [Queen's Park Swizzle](./queens-park-swizzle.md) (Score 5: shared rum base, lime, and sweetener), [The Salty Shaker](./the-salty-shaker.md) (Score 5: both are shaken sours using lime), [Long Island Ice Tea](./long-island-ice-tea.md) (Score 7: shared Rum base and citrus sour profile)

@@ -3,6 +3,14 @@
 Append-only, reverse-chronological (newest on top). Every Ingest / Query-of-note / Lint
 gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppable.
 
+## 2026-06-11 — Ingest
+
+- Ingested **Long Island Ice Tea** from `raw/inbox/Untitled.md`.
+- Completed Background and historical context from the web (Source: spiritsanddistilling.com).
+- Assigned 7 tags: `#Vodka`, `#Rum`, `#Gin`, `#Tequila`, `#Highball`, `#Boozy`, `#Refreshing`.
+- Linked **Other Similar Cocktails**: mutual links with **Mojito**, **Daiquiri**, and **The Salty Shaker** based on scoring rubric (§7).
+- Updated `index.md`, `tags.md`, and VitePress sidebar.
+
 ---
 
 ## 2026-06-10 — Documentation Update
