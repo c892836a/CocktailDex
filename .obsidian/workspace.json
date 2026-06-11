@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "wiki/espresso-martini.md",
+                "file": "wiki/the-salty-shaker.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "espresso-martini"
+              "title": "the-salty-shaker"
             }
           }
         ]
@@ -196,11 +196,11 @@
   },
   "active": "a5792ee10cb62ff7",
   "lastOpenFiles": [
-    "wiki/sangria.md",
+    "wiki/espresso-martini.md",
     "wiki/the-salty-shaker.md",
+    "wiki/sangria.md",
     "photos/the-salty-shaker.jpg",
     "photos/espresso-martini.png",
-    "wiki/espresso-martini.md",
     "wiki/daiquiri.md",
     "photos/bermuda-rum-swizzle.jpg",
     "photos/daiquiri.jpg",
