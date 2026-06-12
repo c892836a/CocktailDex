@@ -34,10 +34,10 @@ When this folder is empty, everything has been processed.
 - **Garnish:** TBD
 - **Profile:** TBD
 
-**Eric — Rating:** _ / 5
+**Eric — Rating:** _ / 5  (0.5 increments, e.g. 4.5 / 5)
 > N/A
 
-**Charlene — Rating:** _ / 5
+**Charlene — Rating:** _ / 5  (0.5 increments, e.g. 4.5 / 5)
 > N/A
 
 **Modified Variation:** N/A

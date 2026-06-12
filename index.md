@@ -24,12 +24,12 @@ only). Click a name for the full card.
 |----------|------|-----------|-------------|-------------|---------|:----:|:--------:|
 | [Bermuda Rum Swizzle](./wiki/bermuda-rum-swizzle.md) | Rum | Collins / Highball glass | Gosling's Black Seal rum, Gold rum, Triple sec, Falernum, Pineapple juice, Orange juice, Lemon juice, Angostura bitters | Swizzle | Fruity, Spiced, Complex | — | — |
 | [Daiquiri](./wiki/daiquiri.md) | Rum | Coupe | White rum, Fresh lime juice, Simple syrup | Shaken | Refreshing, Tart, Balanced | — | — |
-| [Espresso Martini](./wiki/espresso-martini.md) | Vodka | Coupe | Mr. Black Cold Brew Coffee Liqueur, Vodka or Cognac, Freshly brewed espresso (slightly cooled), Rich Demerara syrup (2:1), swath Lemon oil | Shaken | Bold and rich from espresso and Demerara, finished with clean lemon oil. Foamy and silky on the palate. | 4 / 5 | — |
-| [Long Island Ice Tea](./wiki/long-island-ice-tea.md) | Vodka | Pint glass (Collins) | Vodka, Rum, Gin, Tequila (Blanco or silver), Triple Sec, Lemon juice, Rich Demerara syrup (2:1), of Coke (for color) | Shake all ingredients (except Coke) with ice, then open pour… | Boozy, strong, bold and complex. Refreshing. | 4 / 5 | — |
-| [Mojito](./wiki/mojito.md) | Rum | Highball (Collins) glass | White rum, Lime juice, Sugar (or 0.75 oz simple syrup), Mint leaves, Soda water, to top | Muddled | Refreshing, Citrusy, Light | 5 / 5 | — |
-| [Queen's Park Swizzle](./wiki/queens-park-swizzle.md) | Rum | Collins glass | Aged rum (Demerara), Lime juice, Demerara rich syrup, Mint leaves, Angostura bitters | Swizzle | Spiced, Citrusy, Complex | 4 / 5 | — |
-| [Sangria](./wiki/sangria.md) | Wine | Pitcher, and other serving glasses | orange, sliced, lemon, sliced, apple, sliced, rich Demerara Syrup, fresh lemon juice, Grand Marnier, Dry sherry, Bottle of light red wine | Built | Vibrant and juicy. Fruit on the palate and end with sophisticated nutty flavor from sherry | 4.5 / 5 | — |
-| [The Salty Shaker](./wiki/the-salty-shaker.md) | Whiskey | Nick & Nora | MurLarkey Salsa Borracha Whiskey, mango juice, lime juice | Shaken | Tropical, spiced, round body with mild heat. | 3 / 5 | 3.5 / 5 |
+| [Espresso Martini](./wiki/espresso-martini.md) | Vodka | Coupe | Mr. Black Cold Brew Coffee Liqueur, Vodka or Cognac, Freshly brewed espresso (slightly cooled), Rich Demerara syrup (2:1), swath Lemon oil | Shaken | Bold and rich from espresso and Demerara, finished with clean lemon oil. Foamy and silky on the palate. | 4 | — |
+| [Long Island Ice Tea](./wiki/long-island-ice-tea.md) | Vodka | Pint glass (Collins) | Vodka, Rum, Gin, Tequila (Blanco or silver), Triple Sec, Lemon juice, Rich Demerara syrup (2:1), of Coke (for color) | Shake all ingredients (except Coke) with ice, then open pour… | Boozy, strong, bold and complex. Refreshing. | 4 | — |
+| [Mojito](./wiki/mojito.md) | Rum | Highball (Collins) glass | White rum, Lime juice, Sugar (or 0.75 oz simple syrup), Mint leaves, Soda water, to top | Muddled | Refreshing, Citrusy, Light | 5 | — |
+| [Queen's Park Swizzle](./wiki/queens-park-swizzle.md) | Rum | Collins glass | Aged rum (Demerara), Lime juice, Demerara rich syrup, Mint leaves, Angostura bitters | Swizzle | Spiced, Citrusy, Complex | 4 | — |
+| [Sangria](./wiki/sangria.md) | Wine | Pitcher, and other serving glasses | orange, sliced, lemon, sliced, apple, sliced, rich Demerara Syrup, fresh lemon juice, Grand Marnier, Dry sherry, Bottle of light red wine | Built | Vibrant and juicy. Fruit on the palate and end with sophisticated nutty flavor from sherry | 4.5 | — |
+| [The Salty Shaker](./wiki/the-salty-shaker.md) | Whiskey | Nick & Nora | MurLarkey Salsa Borracha Whiskey, mango juice, lime juice | Shaken | Tropical, spiced, round body with mild heat. | 3 | 3.5 |
 
 ---
 

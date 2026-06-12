@@ -178,6 +178,21 @@
   color: var(--vp-c-brand-1);
 }
 
+.cdx-star--half {
+  position: relative;
+  color: var(--vp-c-text-3);
+}
+
+.cdx-star--half::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  overflow: hidden;
+  color: var(--vp-c-brand-1);
+}
+
 .cdx-rating-note {
   margin-left: 0.55em;
   font-size: 0.82em;

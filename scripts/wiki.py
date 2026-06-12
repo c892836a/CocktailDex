@@ -91,7 +91,11 @@ def _rating(text, person):
     if not m:
         return "—"
     v = m.group(1).strip()
-    return "—" if "_" in v else v
+    if "_" in v:
+        return "—"
+    # Extract the numeric part (allowing floats like 4.5)
+    val_m = re.match(r"(\d+(?:\.\d+)?)", v)
+    return val_m.group(1) if val_m else v
 
 
 def parse_card(path):

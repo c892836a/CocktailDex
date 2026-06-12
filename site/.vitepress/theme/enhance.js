@@ -91,8 +91,8 @@ function enhanceRatings(root) {
     if (parent.dataset.cdxRating) return // idempotent
 
     const { nodes, text } = trailingNodes(strong)
-    // Read the value ALREADY in the markup. `_` means blank — never invent a number.
-    const m = text.match(/(\d+|_)\s*\/\s*(\d+)/)
+    // Read the value ALREADY in the markup. Supports decimals like 4.5.
+    const m = text.match(/([\d.]+|_)\s*\/\s*(\d+)/)
     if (!m) return // unexpected markup → leave as-is
     const max = parseInt(m[2], 10)
     if (!Number.isFinite(max) || max < 1 || max > 10) return
@@ -114,12 +114,20 @@ function enhanceRatings(root) {
       note.textContent = 'not yet rated'
       wrap.appendChild(note)
     } else {
-      const value = parseInt(m[1], 10)
+      const value = parseFloat(m[1])
       const filled = Math.max(0, Math.min(max, value))
       for (let i = 1; i <= max; i++) {
         const s = document.createElement('span')
-        s.className = i <= filled ? 'cdx-star cdx-star--on' : 'cdx-star'
-        s.textContent = i <= filled ? '★' : '☆'
+        if (i <= filled) {
+          s.className = 'cdx-star cdx-star--on'
+          s.textContent = '★'
+        } else if (i - 0.5 <= filled) {
+          s.className = 'cdx-star cdx-star--half'
+          s.textContent = '★'
+        } else {
+          s.className = 'cdx-star'
+          s.textContent = '☆'
+        }
         wrap.appendChild(s)
       }
       const note = document.createElement('span')

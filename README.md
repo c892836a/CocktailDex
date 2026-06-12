@@ -252,9 +252,13 @@ Ratings are yours. Either edit the card directly, **or** dictate and have the AI
 exactly what you say (it won't paraphrase or invent):
 
 ```
-On wiki/daiquiri.md, set Eric — Rating to 5 / 5 with the comment: "the benchmark sour."
+On wiki/daiquiri.md, set Eric — Rating to 4.5 / 5 with the comment: "the benchmark sour."
 Record my words verbatim.
 ```
+
+**Note:** Ratings use **0.5 increments** (e.g., 3.5, 4.0, 4.5). The website displays these
+as stars (including half-stars). The `/ 5` denominator is hidden on the index page for a
+cleaner look but should be kept in the wiki cards.
 
 ## Correct a cocktail (fix a recipe, etc.)
 
@@ -287,12 +291,12 @@ a full history of every AI edit.)
 | Fill gaps in a card | `Complete the TBD fields in wiki/<slug>.md and cite sources.` |
 | Get a recommendation | `Using the wiki, what should I make with <ingredients>?` |
 | Browse a style | `Show me every <#Tag> drink and how they differ.` |
-| Find top-rated | `Which cocktails did Eric rate 5/5?` |
+| Find top-rated | `Which cocktails did Eric rate 4.5 or higher?` |
 | Rebuild index & tags | `python scripts/wiki.py compile` — or *"rebuild the index"* |
 | Fix tags | `Review and fix the tags on wiki/<slug>.md against the vocabulary.` |
 | Refresh similar links | `Re-evaluate similar links using the scoring system (threshold ≥ 5) and make mutual.` |
 | Health check | `python scripts/wiki.py lint` — or *"lint the wiki"* |
-| Record a rating | `Set <person> — Rating on wiki/<slug>.md to X/5, comment "…". My words verbatim.` |
+| Record a rating | `Set <person> — Rating on wiki/<slug>.md to X.5/5, comment "…". My words verbatim.` |
 | Fix a recipe | `Re-ingest the corrected file in raw/inbox/ and overwrite its card.` |
 
 ---

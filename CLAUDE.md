@@ -18,8 +18,8 @@ single source of truth for *how* to do that. Read it fully before any operation.
 
 | Op | Trigger phrase (examples) | What you do |
 |----|---------------------------|-------------|
-| **Ingest** | "ingest", "process my new cocktails", "I dropped some drinks in" | Process every file in `raw/inbox/` → enriched cards in `wiki/`, update indexes, archive originals |
-| **Query** | "what should I make with…", "show me all Tiki drinks", "which did Eric rate 5?" | Read `index.md` → narrow via `tags.md` + grep → open relevant `wiki/` cards → answer with citations |
+| **Ingest** | "ingest", "process my new cocktails", "I dropped some drinks in" | Process every file in `raw/inbox/` → enriched cards in `wiki/`, update indexes (hiding rating denominators), archive originals |
+| **Query** | "what should I make with…", "show me all Tiki drinks", "which did Eric rate 5?" | Read `index.md` (check ratings as numbers) → narrow via `tags.md` + grep → open relevant `wiki/` cards → answer with citations |
 | **Lint** | "lint", "health check", "is the wiki consistent?" | Run `python scripts/wiki.py lint` (§8), fix what it flags, report content issues |
 | **Compile** | "compile", "rebuild the index", "resync tags" | Run `python scripts/wiki.py compile` — regenerate `index.md` + `tags.md` from the `wiki/` cards |
 
@@ -109,10 +109,10 @@ source link: (source: https://…). Never invent history.}
 - **Profile:** {flavour summary}
 - **Tags:** #{Tag1} #{Tag2} #{Tag3}   ← 3–7 tags, drawn from the 6 dimensions (§4)
 
-**Eric — Rating:** _ / 5
+**Eric — Rating:** _ / 5  (increments of 0.5)
 > N/A
 
-**Charlene — Rating:** _ / 5
+**Charlene — Rating:** _ / 5  (increments of 0.5)
 > N/A
 
 **Modified Variation:** N/A
@@ -280,6 +280,8 @@ End a lint with a short report + the `log.md` entry `## YYYY-MM-DD — Lint`.
 1. **Ratings & Modified Variation are HUMAN-ONLY.** Never write, estimate, infer, or alter
    `Eric — Rating`, `Charlene — Rating`, or `Modified Variation`. Carry them across raw→wiki
    exactly as written; if a rating or its comment is blank/placeholder, use `_ / 5` and `N/A`.
+   Ratings use **0.5 increments**; the index page hides the denominator (e.g., "4.5" instead
+   of "4.5 / 5").
 2. **`raw/archive/` is immutable.** Once a file is archived, never edit it. To revise, the
    owner drops a corrected file in `raw/inbox/` and you re-ingest (overwrite the `wiki/` card).
 3. **No fabricated facts.** Background and any historical/sourcing claim must be grounded in
@@ -317,10 +319,10 @@ End a lint with a short report + the `log.md` entry `## YYYY-MM-DD — Lint`.
 ```bash
 grep -ril "#Tiki"           wiki/    # all Tiki drinks
 grep -ril "#Rum"            wiki/    # all rum-based
-grep -ri  "Eric.*5 / 5"     wiki/    # Eric's top-rated
+grep -ri  "Eric.*4.5 / 5"     wiki/    # Eric's high-rated
 grep -ri  "Campari"         wiki/    # anything using Campari
 grep -ril "#Swizzle"        wiki/    # by technique
-grep -L   "Eric.*[0-9] / 5" wiki/*.md # cards still missing Eric's rating
+grep -L   "Eric.*[\d.] / 5" wiki/*.md # cards still missing Eric's rating
 ```
 
 *Last updated: 2026-06-08. This file is the schema; keep it current if the workflow changes.*
