@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CLAUDE.md",
+                "file": "tags.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "CLAUDE"
+              "title": "tags"
             }
           }
         ]
@@ -196,25 +196,26 @@
   },
   "active": "a5792ee10cb62ff7",
   "lastOpenFiles": [
+    "wiki/mojito.md",
+    "tags.md",
+    "GEMINI.md",
+    "CLAUDE.md",
+    "index.md",
+    "wiki/long-island-ice-tea.md",
+    "wiki/bermuda-rum-swizzle.md",
+    "wiki/the-salty-shaker.md",
+    "wiki/espresso-martini.md",
+    "wiki/sangria.md",
+    "wiki/daiquiri.md",
     "wiki/queens-park-swizzle.md",
     "photos/sangria.jpg",
-    "wiki/long-island-ice-tea.md",
     "photos/long-island-ice-tea/file-20260611003229561.jpg",
     "photos/long-island-ice-tea",
-    "wiki/the-salty-shaker.md",
     "raw/inbox/README.md",
     "raw/inbox/Untitled.md",
     "raw/archive/long-island-ice-tea.md",
-    "wiki/espresso-martini.md",
-    "CLAUDE.md",
-    "GEMINI.md",
     "README.md",
     "log.md",
-    "index.md",
-    "wiki/daiquiri.md",
-    "wiki/bermuda-rum-swizzle.md",
-    "wiki/sangria.md",
-    "wiki/mojito.md",
     "photos/daiquiri.jpg",
     "photos/bermuda-rum-swizzle.jpg",
     "photos/the-salty-shaker.jpg",
@@ -230,7 +231,6 @@
     "raw/archive/the-salty-shaker.md",
     "raw/inbox/The salty shaker.md",
     "raw/archive/The salty shaker.md",
-    "tags.md",
     "photos/queens-park-swizzle.jpg",
     "photos/Untitled.md",
     "photos/mojito.jpg",

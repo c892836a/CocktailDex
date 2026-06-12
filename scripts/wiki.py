@@ -49,10 +49,11 @@ VOCABULARY = {
                  "Fizz", "Punch", "Spritz", "Daisy", "Flip", "Julep"],
     },
     "Glassware": {
-        "blurb": ("Serving vessel. ('Highball'/'Martini' as families live above; the tall "
-                  "and stemmed glasses here are 'Collins' / 'Coupe' / 'NickAndNora'.)"),
-        "tags": ["Collins", "Coupe", "Rocks", "NickAndNora",
-                 "TikiMug", "Hurricane", "WineGlass", "Flute"],
+        "blurb": ("Serving vessel. (Specific vessels like 'Coupe', 'NickAndNora', or "
+                  "'Collins' are listed here; 'Highball' and 'Martini' are captured "
+                  "as Families.)"),
+        "tags": ["Collins", "Coupe", "Rocks", "NickAndNora", "TikiMug", "Hurricane",
+                 "WineGlass", "Flute", "Shot", "Margarita", "Pint"],
     },
 }
 

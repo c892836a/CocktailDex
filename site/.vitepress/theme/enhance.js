@@ -17,8 +17,8 @@
 // trade-off of D3; the Python VOCABULARY remains the source of truth.
 const VOCABULARY = {
   base: ['Rum', 'Gin', 'Vodka', 'Whiskey', 'Tequila', 'Mezcal',
-    'Brandy', 'Cognac', 'Aquavit', 'Liqueur', 'FortifiedWine'],
-  ingredient: ['Lime', 'Mint', 'Falernum', 'Pineapple', 'Lemon', 'Orange',
+    'Brandy', 'Cognac', 'Aquavit', 'Liqueur', 'FortifiedWine', 'Wine'],
+  ingredient: ['Lime', 'Mint', 'Falernum', 'Pineapple', 'Mango', 'Lemon', 'Orange',
     'Sugar', 'Demerara', 'Angostura', 'Soda', 'Campari',
     'Vermouth', 'Egg', 'Cream', 'Ginger', 'Coffee'],
   flavor: ['Refreshing', 'Spiced', 'Fruity', 'Citrusy', 'Tart', 'Sweet',
@@ -28,7 +28,7 @@ const VOCABULARY = {
   family: ['Tiki', 'Highball', 'Sour', 'OldFashioned', 'Martini',
     'Fizz', 'Punch', 'Spritz', 'Daisy', 'Flip', 'Julep'],
   glassware: ['Collins', 'Coupe', 'Rocks', 'NickAndNora',
-    'TikiMug', 'Hurricane', 'Wine', 'Flute'],
+    'TikiMug', 'Hurricane', 'WineGlass', 'Flute', 'Shot', 'Margarita', 'Pint'],
 }
 
 // Reverse map { tag -> dimension } built once.

@@ -2,7 +2,7 @@
 name: Mojito
 slug: mojito
 base: Rum
-tags: [Rum, Mint, Lime, Muddled, Highball, Refreshing]
+tags: [Rum, Mint, Lime, Built, Highball, Refreshing]
 glassware: Highball
 ingested: 2026-06-08
 updated: 2026-06-08
@@ -25,7 +25,7 @@ source: raw/archive/mojito.md
 - **Instruction:** Gently muddle mint with sugar and lime juice in the glass. Add rum and fill with ice. Top with soda water and stir briefly to lift the mint.
 - **Garnish:** Mint sprig and a lime wheel
 - **Profile:** Refreshing, Citrusy, Light
-- **Tags:** #Rum #Mint #Lime #Muddled #Highball #Refreshing
+- **Tags:** #Rum #Mint #Lime #Built #Highball #Refreshing
 
 **Eric — Rating:** 5 / 5
 > N/A
