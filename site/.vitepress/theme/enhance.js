@@ -123,7 +123,7 @@ function enhanceRatings(root) {
           s.textContent = '★'
         } else if (i - 0.5 <= filled) {
           s.className = 'cdx-star cdx-star--half'
-          s.textContent = '★'
+          s.textContent = '☆'
         } else {
           s.className = 'cdx-star'
           s.textContent = '☆'

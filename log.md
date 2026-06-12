@@ -3,6 +3,14 @@
 Append-only, reverse-chronological (newest on top). Every Ingest / Query-of-note / Lint
 gets a dated entry. Date prefixes are ISO `YYYY-MM-DD` so the log stays greppable.
 
+## 2026-06-11 — Website Rendering Update
+
+- Updated `site/.vitepress/theme/enhance.js` to change the half-star base character from a solid star (★) to an outline star (☆).
+- This ensures that half-stars render with a transparent background for the unfilled portion (keeping the shape outline), rather than a solid/translucent block.
+- Verified consistency via `python scripts/wiki.py lint`.
+
+---
+
 ## 2026-06-11 — Ingest
 
 - Ingested **Long Island Ice Tea** from `raw/inbox/Untitled.md`.
